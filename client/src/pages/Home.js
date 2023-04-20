@@ -32,7 +32,6 @@ const Home = () => {
                 </thead>
 
                 <tbody>
-                    {console.log(data)}
                     {data.map((item, index) => {
                         return (
                             <tr key={item.USER_ID}>
