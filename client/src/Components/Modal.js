@@ -6,13 +6,13 @@ function Modal(props) {
     return(
         <div className="modal">
             <Link to={`/action/acceso/${props.user_id}`}>
-                <button className="btn btn-acceso"> Acceso </button>
+                <button className="btn"> Acceso </button>
             </Link>
             <Link to={`/action/rect/${props.user_id}`}>
-                <button className="btn btn-rect">Rectificación</button>
+                <button className="btn">Rectificación</button>
             </Link>
-                <button className="btn btn-cancel"> Cancelación </button>
-                <button className="btn btn-op"> Oposición </button>
+                <button className="btn"> Cancelación </button>
+                <button className="btn"> Oposición </button>
         </div>
     );
 }
