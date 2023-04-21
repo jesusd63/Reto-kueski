@@ -1,13 +1,25 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from "react-router-dom"; 
 import "./Home.css";
 import {toast} from "react-toastify";
 import axios from "axios";
 import { AiFillHome, AiOutlineUser} from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
+import Modal from "../Components/Modal";
 
 
 const Home = () => {
+
+    const [ModalIsOpen, setModalIsOpen] = useState(false);
+
+    function deleteHandler(){
+        if(ModalIsOpen){
+            setModalIsOpen(false);
+        }
+        else{
+            setModalIsOpen(true);
+        }
+    }
+
     const [data, setData] = useState ([]);
 
     const loadData = async () => {
@@ -64,14 +76,8 @@ const Home = () => {
                                 <td>{item.CURP}</td>
                                 <td>{item.RFC}</td>
                                 <td>
-                                    <Link to={`/action/acceso/${item.USER_ID}`}>
-                                        <button className="btn btn-acceso"> Acceso </button> 
-                                    </Link>
-                                    <Link to={`/action/rect/${item.USER_ID}`}>
-                                        <button className="btn btn-rect">Rectificación</button>
-                                    </Link>
-                                    <button className="btn btn-cancel"> Cancelación </button>
-                                    <button className="btn btn-op"> Oposición </button>
+                                    <button onClick={deleteHandler}>...</button>
+                                    {ModalIsOpen ? <Modal user_id={item.USER_ID}/> : null}
                                 </td>
                             </tr>
                         );

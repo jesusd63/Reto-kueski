@@ -1,0 +1,43 @@
+.modal {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 7rem;
+    z-index: 10;
+    position: fixed;
+    top: 35vh;
+    left: calc(92% - 15rem);
+    display: block;
+}
+
+.btn {
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btn-acceso {
+    background-color: aqua;
+    color: black;
+}
+
+.btn-rect {
+    background-color: #008cba;
+}
+
+.btn-cancel {
+    background-color: red;
+}
+
+.btn-op {
+    background-color: blue;
+}
