@@ -3,6 +3,9 @@ import {Link} from "react-router-dom";
 import "./Home.css";
 import {toast} from "react-toastify";
 import axios from "axios";
+import { AiFillHome, AiOutlineUser} from "react-icons/ai";
+import { CiSettings } from "react-icons/ci";
+
 
 const Home = () => {
     const [data, setData] = useState ([]);
@@ -15,8 +18,26 @@ const Home = () => {
     useEffect(() => {
         loadData();
     }, []);
+
     return (
         <div style={{marginTop: "150px"}}>
+            <div className='sidebar'>
+				    <img className='logo' alt = "kueski logo" src = {require("../assets/desktop_logo.png")}/>
+				<div className='user'>
+                    <AiOutlineUser className='account1'/>
+					<span className='Login'>Log in</span>
+				</div>
+				<div className='navlinks'>
+					<div className='dashboard'>
+                        < AiFillHome className='casa1'/>
+						<span className='Dashboard'>Dashboard</span>
+					</div>
+					<div className='ajustes'>
+                        <CiSettings className='settings1'/>
+						<span className='Ajustes'>Ajustes</span>
+					</div>
+				</div>
+			</div>
             <table className="styled-table"> 
                 <thead> 
                     <tr>
