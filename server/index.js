@@ -9,9 +9,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 const path = require('path');
 
 
-const db = mysql.createConnection('mysql://t8g2qrxxtx91443y783u:pscale_pw_JDfcLwNm77TVEQEFc22fCqcaiPRPnvc7Z9KVmZ4GduH@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')
+app.use( express.static( path.resolve( __dirname, '../client/build')));
 
-//const db = mysql.createPool({
+app.get('*', (req, res) => {
+res.sendFile( path.resolve( __dirname, '../client/build', 'index.html'));
+});
+
+
+const db = mysql.createConnection('mysql://38ujgsf0r97gndmudf4l:pscale_pw_UicUXS5iPXzAru2uENv4PCMS5pRnFVan5orxdwtFWSh@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')//const db = mysql.createPool({
  //   host: "aws.connect.psdb.cloud",
   //  user: "t8g2qrxxtx91443y783u",
    // password: "pscale_pw_JDfcLwNm77TVEQEFc22fCqcaiPRPnvc7Z9KVmZ4GduH",
