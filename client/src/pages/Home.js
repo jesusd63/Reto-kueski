@@ -71,9 +71,9 @@ const Home = () => {
                             <tr key={item.USER_ID}>
                                 <th scope="row">{item.USER_ID}</th>
                                 <td>{item.EMAIL}</td>
-                                <td>{item.NAME}</td>
-                                <td>{item.LAST_NAME}</td>
-                                <td>{item.SECOND_LAST_NAME}</td>
+                                <td>{item.USER_NAME}</td>
+                                <td>{item.USER_LAST_NAME}</td>
+                                <td>{item.USER_SEC_LAST_NAME}</td>
                                 <td>{item.CURP}</td>
                                 <td>{item.RFC}</td>
                                 <td>

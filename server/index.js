@@ -3,17 +3,24 @@ const app = express();
 const bodyParser = require("body-parser");
 const mysql = require("mysql2");
 const cors = require("cors");
-
-const db = mysql.createPool({
-    host: "localhost",
-    user: "API",
-    password: "123456",
-    database: "kueski_data",
-});
-
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
+const path = require('path');
+
+
+const db = mysql.createConnection('mysql://t8g2qrxxtx91443y783u:pscale_pw_JDfcLwNm77TVEQEFc22fCqcaiPRPnvc7Z9KVmZ4GduH@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')
+
+//const db = mysql.createPool({
+ //   host: "aws.connect.psdb.cloud",
+  //  user: "t8g2qrxxtx91443y783u",
+   // password: "pscale_pw_JDfcLwNm77TVEQEFc22fCqcaiPRPnvc7Z9KVmZ4GduH",
+   // database: "kueski_data",
+
+
+//});
+
+
 
 app.get("/menu", (req, res) => {
     const sqlGet = "SELECT * FROM users";
