@@ -5,6 +5,7 @@ import axios from "axios";
 import { AiFillHome, AiOutlineUser} from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
 import Modal from "../Components/Modal";
+import {Link} from "react-router-dom";
 
 
 const Home = () => {
@@ -68,7 +69,7 @@ const Home = () => {
                     {data.map((item, index) => {
                         return (
                             <tr key={item.USER_ID}>
-                                <th scope="row">{index+1}</th>
+                                <th scope="row">{item.USER_ID}</th>
                                 <td>{item.EMAIL}</td>
                                 <td>{item.NAME}</td>
                                 <td>{item.LAST_NAME}</td>
@@ -76,8 +77,17 @@ const Home = () => {
                                 <td>{item.CURP}</td>
                                 <td>{item.RFC}</td>
                                 <td>
-                                    <button onClick={deleteHandler}>...</button>
-                                    {ModalIsOpen ? <Modal user_id={item.USER_ID}/> : null}
+                                    {//<button onClick={deleteHandler}  >...</button>
+                                     //{ModalIsOpen ? <Modal user_id={item.USER_ID}/> : null}
+                                    }
+                                    <Link style={{textDecoration: 'none'}} to={`/action/acceso/${item.USER_ID}`}>
+                                        <button className="btn"> Acceso </button>
+                                    </Link>
+                                    <Link style={{textDecoration: 'none'}} to={`/action/rect/${item.USER_ID}`}>
+                                        <button className="btn">Rectificación</button>
+                                    </Link>
+                                        <button className="btn"> Cancelación </button>
+                                        <button className="btn"> Oposición </button>
                                 </td>
                             </tr>
                         );
