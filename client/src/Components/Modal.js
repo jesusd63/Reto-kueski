@@ -5,10 +5,10 @@ function Modal(props) {
 
     return(
         <div className="modal">
-            <Link to={`/action/acceso/${props.user_id}`}>
+            <Link style={{textDecoration: 'none'}} to={`/action/acceso/${props.user_id}`}>
                 <button className="btn"> Acceso </button>
             </Link>
-            <Link to={`/action/rect/${props.user_id}`}>
+            <Link style={{textDecoration: 'none'}} to={`/action/rect/${props.user_id}`}>
                 <button className="btn">Rectificación</button>
             </Link>
                 <button className="btn"> Cancelación </button>
