@@ -16,7 +16,7 @@ res.sendFile( path.resolve( __dirname, '../client/build', 'index.html'));
 });
 
 
-const db = mysql.createConnection('mysql://38ujgsf0r97gndmudf4l:pscale_pw_UicUXS5iPXzAru2uENv4PCMS5pRnFVan5orxdwtFWSh@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')//const db = mysql.createPool({
+//const db = mysql.createConnection('mysql://38ujgsf0r97gndmudf4l:pscale_pw_UicUXS5iPXzAru2uENv4PCMS5pRnFVan5orxdwtFWSh@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')//const db = mysql.createPool({
  //   host: "aws.connect.psdb.cloud",
   //  user: "t8g2qrxxtx91443y783u",
    // password: "pscale_pw_JDfcLwNm77TVEQEFc22fCqcaiPRPnvc7Z9KVmZ4GduH",
@@ -28,10 +28,10 @@ const db = mysql.createConnection('mysql://38ujgsf0r97gndmudf4l:pscale_pw_UicUXS
 
 
 app.get("/menu", (req, res) => {
-    const sqlGet = "SELECT * FROM users";
-    db.query(sqlGet, (err, result) => {
-        res.send(result);
-    });
+    //const sqlGet = "SELECT * FROM users";
+    //db.query(sqlGet, (err, result) => {
+      //  res.send(result);
+  //  });
 });
 
 app.get("/", (req, res) => {
@@ -48,8 +48,8 @@ app.listen(3001, () => {
     console.log("Server listening on port 3001");
 })
 
-db.query('SELECT 1 + 1 AS solution', (err, rows, fields) => {
-  if (err) throw err
+//db.query('SELECT 1 + 1 AS solution', (err, rows, fields) => {
+ // if (err) throw err
 
-  console.log('The solution is: ', rows[0].solution)
-})
+  //console.log('The solution is: ', rows[0].solution)
+//})
