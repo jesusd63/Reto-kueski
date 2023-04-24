@@ -17,8 +17,8 @@ const db = mysql.createPool({
     database: "kueski_data",
 });
 
-app.use( express.static( path.resolve( __dirname, '../client/src')));
 
+app.use( express.static( path.resolve( __dirname, '../client/build')));
 
 app.get('*', (req, res) => {
     res.sendFile( path.resolve( __dirname, '../client/build', 'index.html'));
