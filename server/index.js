@@ -30,7 +30,8 @@ app.listen(3001, () => {
 })
 
 app.get("/menu", (req, res) => {
-    const sqlGet = "SELECT * FROM users";
+    console.log("a");
+    const sqlGet = "SELECT * FROM USERS";
     db.query(sqlGet, (err, result) => {
         res.send(result);
     });
