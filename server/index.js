@@ -11,19 +11,12 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.get('*', (req, res) => {
-    res.sendFile( path.resolve( __dirname, '../client/build', 'index.html'));
-    });
-    
-
-
 const db = mysql.createPool({
     host: "localhost",
-    user: "API",
-    password: "123456",
+    user: "kueski",
+    password: "12345",
     database: "kueski_data",
 });
-
 
 
 app.get("/menu", (req, res) => {
