@@ -4,6 +4,15 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql2");
 const cors = require("cors");
 
+const path= require("path")
+app.use( express.static( path.resolve( __dirname, '../client/build')));
+
+app.get('*', (req, res) => {
+    res.sendFile( path.resolve( __dirname, '../client/build', 'index.html'));
+    });
+    
+
+
 const db = mysql.createPool({
     host: "localhost",
     user: "API",
