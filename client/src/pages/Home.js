@@ -79,9 +79,8 @@ const Home = () => {
                                 <td>{item.CURP}</td>
                                 <td>{item.RFC}</td>
                                 <td>
-                                    {//<button onClick={deleteHandler}  >...</button>
-                                     //{ModalIsOpen ? <Modal user_id={item.USER_ID}/> : null}
-                                    }
+                                    <button onClick={deleteHandler}  >...</button>
+                                    {ModalIsOpen ? <Modal user_id={item.USER_ID}/> : null}
                                     <Link style={{textDecoration: 'none'}} to={`/action/acceso/${item.USER_ID}`}>
                                         <button className="btn"> Acceso </button>
                                     </Link>
