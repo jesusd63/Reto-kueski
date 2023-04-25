@@ -45,14 +45,20 @@ const Home = () => {
         </div>
         <div className="navlinks">
           <div className="dashboard">
-            <AiFillHome className="casa1" />
+          <Link to={`/`}>
+            < AiFillHome className='casa1'/>
+          </Link>
             <span className="Dashboard">Dashboard</span>
           </div>
-          <div className="ajustes">
-            <CiSettings className="settings1" />
-            <span className="Ajustes">Ajustes</span>
+          <div className="dashboard">
+          <Link  to={`/menu/arco`}>
+            <AiFillHome className='casa1'/>
+          </Link>
+            <span className="Dashboard">Logs</span>
           </div>
+
         </div>
+
       </div>
       <div>
         <h1 className="table-title">Usuarios</h1>
