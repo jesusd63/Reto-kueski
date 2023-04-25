@@ -3,7 +3,7 @@ import "./Access.css"
 import axios from "axios";
 import React, {useState, useEffect} from 'react';
 
-function Acceso() {
+function Access() {
 
     const routeParams = useParams();
 
@@ -121,4 +121,4 @@ function Acceso() {
     );
 }
 
-export default Acceso;
+export default Access;
