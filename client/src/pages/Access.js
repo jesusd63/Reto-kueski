@@ -12,7 +12,7 @@ function Access() {
     const [data, setData] = useState ([]);
 
     const loadData = async () => {
-        const response = await axios.get("https://kueskiapi-jorgestebanmr-gmailcom.vercel.app/action/acceso/"+id);
+        const response = await axios.get("https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/acceso/"+id);
         setData(response.data);
     };
 

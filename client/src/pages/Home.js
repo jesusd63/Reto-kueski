@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "./Home.css";
 import {toast} from "react-toastify";
 import axios from "axios";
-import { AiFillHome, AiOutlineUser} from "react-icons/ai";
+import { AiFillHome, AiOutlineUser, AiOutlineMenu} from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
 import Modal from "../Components/Modal";
 import {Link, useNavigate} from "react-router-dom";
@@ -23,7 +23,7 @@ const Home = () => {
     const [data, setData] = useState ([]);
 
     const loadData = async () => {
-        const response = await axios.get("https://kueskiapi-jorgestebanmr-gmailcom.vercel.app/menu");
+        const response = await axios.get("https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/menu");
         setData(response.data);
     };
 
@@ -79,16 +79,25 @@ const Home = () => {
                                 <td>{item.CURP}</td>
                                 <td>{item.RFC}</td>
                                 <td>
-                                    <button onClick={deleteHandler}  >...</button>
-                                    {ModalIsOpen ? <Modal user_id={item.USER_ID}/> : null}
-                                    <Link style={{textDecoration: 'none'}} to={`/action/acceso/${item.USER_ID}`}>
+                                <div className="dropdown">
+                                    <AiOutlineMenu className="dropbtn">ARCO</AiOutlineMenu>
+                                    <div className="dropdown-content" >
+                                        <Link
+                                        style={{ textDecoration: "none" }}
+                                        to={`/action/acceso/${item.USER_ID}`}
+                                        >
                                         <button className="btn"> Acceso </button>
-                                    </Link>
-                                    <Link style={{textDecoration: 'none'}} to={`/action/rect/${item.USER_ID}`}>
+                                        </Link>
+                                        <Link
+                                        style={{ textDecoration: "none" }}
+                                        to={`/action/rect/${item.USER_ID}`}
+                                        >
                                         <button className="btn">Rectificación</button>
-                                    </Link>
+                                        </Link>
                                         <button className="btn"> Cancelación </button>
                                         <button className="btn"> Oposición </button>
+                                    </div>
+                                    </div>
                                 </td>
                             </tr>
                         );

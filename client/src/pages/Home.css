@@ -9,6 +9,39 @@
 	background: linear-gradient(0deg, rgba(255,255,255,1.00), rgba(255,255,255,1.00));
 	background-size: cover;
 }
+.dropbtn {
+	margin-bottom: 1vh;
+	width: 25px;
+	height: 25px;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	border-radius: 10px;
+	z-index: 1;	
+	background-color: white;
+	border: 1px solid black;
+	min-width: 160px;
+	padding: 12px;
+	pointer-events: auto;
+	margin-top: 10px;
+	border-radius: 4px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	text-align: center;
+  }
+  
+  .dropdown:hover .dropdown-content {
+	display: block;
+	position: absolute;
+  	top: 100%;
+  	left: 0;
+  }
 
 .sidebar {
 	position: fixed;

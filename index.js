@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-const db = mysql.createConnection('mysql://cax05zoee0s6ji6790ix:pscale_pw_ngzd6cdkqVMprcFdCu2mzgZJluGCDpMpnEGtv54XBAA@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')
+const db = mysql.createConnection('mysql://20qn7sunnchbop8x55pp:pscale_pw_ovg4oGSkV5Rqyh4mDvWnFM2gJVJBlAUOpVjAo5oeyNy@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')
 
 app.get("/menu", (req, res) => {
   const sqlGet = "SELECT * FROM users";
