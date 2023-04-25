@@ -8,7 +8,6 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-const db = mysql.createConnection('mysql://we58tr2pc0gmpnhbpgiy:pscale_pw_vaoD1RIneQ16vQ6cBuQ482mb2VXIDIMOCdVo6WysQW3@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')
 
 app.get("/menu", (req, res) => {
   const sqlGet = "SELECT * FROM users";
