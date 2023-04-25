@@ -5,7 +5,8 @@ import axios from "axios";
 import { AiFillHome, AiOutlineUser} from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
 import Modal from "../Components/Modal";
-import {Link} from "react-router-dom";
+import {Link, BrowserRouter, Route, Routes} from "react-router-dom";
+import Acceso from './Acceso';
 
 
 const Home = () => {
@@ -80,6 +81,7 @@ const Home = () => {
                                     {//<button onClick={deleteHandler}  >...</button>
                                      //{ModalIsOpen ? <Modal user_id={item.USER_ID}/> : null}
                                     }
+                                    <h1>HOLA</h1>
                                     <Link style={{textDecoration: 'none'}} to={`/action/acceso/${item.USER_ID}`}>
                                         <button className="btn"> Acceso </button>
                                     </Link>
