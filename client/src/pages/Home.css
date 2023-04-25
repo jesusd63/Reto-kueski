@@ -11,17 +11,18 @@
 }
 
 .sidebar {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 175px;
-	height: 1024px;
-	background: rgba(54,0,234,1.00);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 10vw; 
+	height: 100vh;
+	background: rgba(54, 0, 234, 1);
+	overflow-y: auto;
 }
 
 .logo {
 	position: absolute;
-	left: 15px;
+	left: 10px;
 	top: 42px;
 	width: 120px;
 	height: 59.9759521484375px;
@@ -40,7 +41,7 @@
 	position: absolute;
 	width: 150px;
 	height: 83px;
-	left: 12px;
+	transform: translateX(-8px);
 	top: 124px;
 }
 
@@ -143,14 +144,20 @@
 	line-height: 21px;
 }
 
+.table-title{
+	margin-left: auto;
+	margin-right: 58vw;
+}
+
 .styled-table {
     border-collapse: collapse;
-    margin: auto;
+    margin: 0 auto;
     font-size: 0.9rem;
     font-family: inherit;
     max-width: 80%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
+	transform: translateX(75px);
 }
 
 .styled-table thead tr {
@@ -215,3 +222,27 @@
     font-size: .8rem;
 }
 
+@media screen and (max-width: 768px) {
+	.styled-table {
+	  display: block;
+	  overflow-x: auto;
+	  -webkit-overflow-scrolling: touch;
+	}
+	.styled-table thead {
+	  display: none;
+	}
+	.styled-table tbody tr {
+	  display: block;
+	  border-bottom: 1px solid #ddd;
+	}
+	.styled-table tbody td {
+	  display: block;
+	  text-align: center;
+	}
+	.styled-table tbody td:before {
+	  content: attr(data-th);
+	  display: inline-block;
+	  font-weight: bold;
+	  width: 120px;
+	}
+}

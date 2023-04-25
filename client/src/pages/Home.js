@@ -24,7 +24,7 @@ const Home = () => {
     const [data, setData] = useState ([]);
 
     const loadData = async () => {
-        const response = await axios.get("http://localhost:3001/menu");
+        const response = await axios.get("https://kueskiapi-jorgestebanmr-gmailcom.vercel.app/menu");
         setData(response.data);
     };
 
@@ -33,7 +33,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div style={{marginTop: "150px"}}>
+        <div style={{marginTop: "7vh"}}>
             <div className='sidebar'>
 				    <img className='logo' alt = "kueski logo" src = {require("../assets/desktop_logo.png")}/>
 				<div className='user'>
@@ -51,6 +51,9 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+            <div>
+                <h1 class="table-title">Usuarios</h1>
+            <div/>
             <table className="styled-table"> 
                 <thead> 
                     <tr>
@@ -71,9 +74,9 @@ const Home = () => {
                             <tr key={item.USER_ID}>
                                 <th scope="row">{item.USER_ID}</th>
                                 <td>{item.EMAIL}</td>
-                                <td>{item.NAME}</td>
-                                <td>{item.LAST_NAME}</td>
-                                <td>{item.SECOND_LAST_NAME}</td>
+                                <td>{item.USER_NAME}</td>
+                                <td>{item.USER_LAST_NAME}</td>
+                                <td>{item.USER_SEC_LAST_NAME}</td>
                                 <td>{item.CURP}</td>
                                 <td>{item.RFC}</td>
                                 <td>
@@ -95,6 +98,7 @@ const Home = () => {
                 </tbody>
             </table>
         </div>
+    </div>
     )
 }
 
