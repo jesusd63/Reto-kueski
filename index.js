@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-const db = mysql.createConnection('mysql://bnolc45a631u18ywmb4i:pscale_pw_U3BLNYq5xdFLkr1IdHqHNfKZv2fJWeVjZbbjBHHWsbl@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')
+
 
 app.get("/menu", (req, res) => {
   const sqlGet = "SELECT * FROM users";
