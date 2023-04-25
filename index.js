@@ -70,6 +70,44 @@ app.get("/", (req, res) => {
     //});
 });
 
+app.get("/action/acceso/:user", (req, res) => {
+  const userid=req.params.user;
+  const sqlGet = "SELECT * FROM users WHERE USER_ID=?";
+  db.query(sqlGet, [userid], (err, result) => {
+      res.send(result);
+      
+      console.log(result);
+  });
+});
+
+app.get("/action/op/:user", (req, res) => {
+  const userid=req.params.user;
+  const sqlGet = "UPDATE users SET IS_BLOCKED = 1 WHERE USER_ID=?";
+  db.query(sqlGet, [userid], (err, result) => {
+      res.send(result);
+
+  });
+});
+
+app.get("/action/cancel/:user", (req, res) => {
+  const userid=req.params.user;
+  const sqlGet = "UPDATE users SET USER_NAME = NULL, USER_LAST_NAME=NULL, USER_SEC_LAST_NAME=NULL, BIRTH=NULL, NATIONALITY=NULL, STATE=NULL, RFC=NULL, GENDER=NULL, EMAIL=NULL, INFO_JSON=NULL, IS_CLIENT=NULL, DELETED_AT=current_date()  WHERE USER_ID=?;";
+  const sqlDel= "DELETE FROM addresses WHERE USER_ID=?;"
+  const sqlDel2= "DELETE FROM identifications WHERE USER_ID=?;"
+  db.query(sqlGet, [userid], (err, result) => {
+      res.send(result);
+
+  });
+  db.query(sqlDel, [userid], (err, result) => {
+    res.send(result);
+
+});
+db.query(sqlDel2, [userid], (err, result) => {
+  res.send(result);
+
+});
+});
+
 app.listen(port, () => {
     console.log("Server listening on port",port);
 })

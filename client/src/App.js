@@ -12,7 +12,6 @@ function App() {
       <ToastContainer position="top-center"/>
       <Routes>
         <Route exact path="/" element={<Home />}/>
-        <Route path="/action/acceso/:id" element={<Acceso/>} />
       </Routes>
     </div>
     </BrowserRouter>
