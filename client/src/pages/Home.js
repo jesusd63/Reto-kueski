@@ -5,8 +5,7 @@ import axios from "axios";
 import { AiFillHome, AiOutlineUser} from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
 import Modal from "../Components/Modal";
-import {Link} from "react-router-dom";
-
+import {Link, useNavigate} from "react-router-dom";
 
 const Home = () => {
 
@@ -52,7 +51,7 @@ const Home = () => {
 				</div>
 			</div>
             <div>
-                <h1 class="table-title">Usuarios</h1>
+                <h1 className="table-title">Usuarios</h1>
             <div/>
             <table className="styled-table"> 
                 <thead> 
