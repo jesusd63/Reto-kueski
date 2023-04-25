@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-
+const db = mysql.createConnection('mysql://bnolc45a631u18ywmb4i:pscale_pw_U3BLNYq5xdFLkr1IdHqHNfKZv2fJWeVjZbbjBHHWsbl@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')
 
 
 app.get("/menu", (req, res) => {
@@ -19,12 +19,20 @@ app.get("/menu", (req, res) => {
     });
 });
 
+app.get("/menu/arco", (req, res) => {
+  const sqlGet = "SELECT * FROM arco";
+  db.query(sqlGet, (err, result) => {
+      res.send(result);
+      console.log(result);
+  });
+});
+
 app.get("/action/acceso/:user", (req, res) => {
   const userid=req.params.user;
-  const sqlGet = "SELECT * FROM users WHERE USER_ID=?";
+  const sqlGet = "select users.USER_ID, users.USER_NAME, users.USER_LAST_NAME, users.USER_SEC_LAST_NAME, users.BIRTH, users.NATIONALITY, users.STATE, ECONOMIC_ACTIVITY, users.CURP, users.RFC, users.GENDER, users.PHONE, users.EMAIL, users.INFO_JSON, addresses.COUNTRY, addresses.STATE AS AD_STATE, addresses.CITY, addresses.NBHOOD, addresses.ZIP_CODE, addresses.STREET, addresses.EXT_NUM from users left join addresses on users.USER_ID=addresses.USER_ID having users.USER_ID=? order by users.USER_ID limit 1;";
   db.query(sqlGet, [userid], (err, result) => {
       res.send(result);
-      
+    
       console.log(result);
   });
 });

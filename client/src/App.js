@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Home from "./pages/Home"
 import Acceso from "./pages/Acceso"
-
+import Logs from "./pages/Logs"
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />}/>
         <Route exact path="/action/acceso/:id" element={<Acceso />}/>
+        <Route exact path="/menu/arco" element={<Logs />}/>
 
       </Routes>
     </div>

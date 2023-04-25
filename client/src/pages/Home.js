@@ -26,7 +26,7 @@ const Home = () => {
     const [data, setData] = useState ([]);
 
     const loadData = async () => {
-        const response = await axios.get("https://kueskiapi-jorgestebanmr-gmailcom.vercel.app/menu");
+        const response = await axios.get("https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/menu");
         setData(response.data);
     };
 
@@ -47,10 +47,15 @@ const Home = () => {
                         < AiFillHome className='casa1'/>
 						<span className='Dashboard'>Dashboard</span>
 					</div>
-					<div className='ajustes'>
-                        <CiSettings className='settings1'/>
-						<span className='Ajustes'>Ajustes</span>
-					</div>
+
+                    <div>
+                        <Link style={{textDecoration: 'none'}} to={`/menu/arco`}>
+                            <button className="btn">
+                            <CiSettings className='BiTimeFive'/>
+						    <span className='Ajustes'>ARCO logs</span>
+                            </button>
+                        </Link>
+                    </div>
 				</div>
 			</div>
             <div>

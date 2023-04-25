@@ -21,10 +21,9 @@
 }
 
 .logo {
-	position: absolute;
-	right: 8px;
+	position:absolute;
 	top: 42px;
-	width: 120px;
+	width: 10vw;
 	height: 59.9759521484375px;
 	object-fit: cover;
 	overflow: hidden;
@@ -119,30 +118,7 @@
 	left: 0px;
 	top: 60px;
 }
-.settings1 {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 20px;
-	height: 20px;
-	object-fit: cover;
-	overflow: hidden;
-    color: white;
-}
-.Ajustes {
-	position: absolute;
-	left: 35px;
-	top: 4px;
-	width: 83px;
-	height: 13px;
-	display: flex;
-	align-items: center;
-	color: rgba(255,255,255,1.00);
-	font-family: Poppins;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 21px;
-}
+
 
 .table-title{
 	margin-left: auto;
