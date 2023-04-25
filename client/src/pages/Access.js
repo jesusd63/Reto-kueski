@@ -75,20 +75,6 @@ function Access() {
 
 			<div className='DATA'>
 			<div className='data'>
-					<div className='info'>
-						<span className='Rafael'>{data.USER_NAME}</span>
-						<span className='Belloni'>{data.USER_LAST_NAME}</span>
-						<span className='Rocha'>{data.USER_SEC_LAST_NAME}</span>
-						<span className='_15011984'>{data.BIRTH}</span>
-						<span className='Mexicana'>{data.NATIONALITY}</span>
-						<span className='Sonora'>{data.STATE}</span>
-						<span className='Personafsica'>{data.ECONOMIC_ACTIVITY}</span>
-						<span className='RONC712938715897A'>{data.CURP}</span>
-						<span className='JDKS21983719586'>{data.RFC}</span>
-						<span className='Masculino'>{data.GENDER}</span>
-						<span className='_6444612431'>{data.PHONE}</span>
-						<span className='rafaelbellonigmailcom'>{data.EMAIL}</span>
-					</div>
 					<div className='titles'>
 						<span className='Nombre'>Nombre</span>
 						<span className='ApellidoPaterno'>Apellido Paterno</span>
