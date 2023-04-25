@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import "./Acceso.css"
+import "./Access.css"
 import axios from "axios";
 import React, {useState, useEffect} from 'react';
 
@@ -7,10 +7,12 @@ function Acceso() {
 
     const routeParams = useParams();
 
+	const id = routeParams.id;
+
     const [data, setData] = useState ([]);
 
     const loadData = async () => {
-        const response = await axios.get("https://kueskiapi-jorgestebanmr-gmailcom.vercel.app/menu");
+        const response = await axios.get("https://kueskiapi-jorgestebanmr-gmailcom.vercel.app/action/acceso/"+id);
         setData(response.data);
     };
 
@@ -18,14 +20,8 @@ function Acceso() {
         loadData();
     }, []);
 
-    data.map((item, index) => {
-        if(item.USER_ID === routeParams.id){
-            console.log(item.USER_NAME);
-        } 
-    });
-
-    console.log(data);
-
+	console.log(data);
+		
     return(
         <div className='acceso_1_acceso'>
 			<div className='buttonreport'>
@@ -36,11 +32,47 @@ function Acceso() {
 				<span className='Otros'>Otros</span>
 				<div className='Rectangle27'/>
 			</div>
-			<div className='head'>
-				<span className='AccesoRafaelBelloniRocha'>Acceso: {data.USER_NAME} {data.USER_LAST_NAME} {data.USER_SEC_LAST_NAME}</span>
-				<span className='Fecha18Mar2023'>Fecha: 18/Mar/2023</span>
+				{data.map((item, index) => {
+                        return (
+							<div key={item.USER_ID}>
+								<div className="head">
+									<span className='AccesoRafaelBelloniRocha'>Acceso: {item.USER_NAME} {item.USER_LAST_NAME} {item.USER_SEC_LAST_NAME}</span>
+									<span className='Fecha18Mar2023'>Fecha: 18/Mar/2023</span>
+								</div>
+								<div className="DATA">
+									<div className="data">
+										<div className='info'>
+											<span className='Rafael'>{item.USER_NAME}</span>
+											<span className='Belloni'>{item.USER_LAST_NAME}</span>
+											<span className='Rocha'>{item.USER_SEC_LAST_NAME}</span>
+											<span className='_15011984'> {item.BIRTH.slice(0,10)} </span>
+											<span className='Mexicana'>{item.NATIONALITY}</span>
+											<span className='Sonora'>{item.STATE}</span>
+											<span className='Personafsica'>{item.ECONOMIC_ACTIVITY}</span>
+											<span className='RONC712938715897A'>{item.CURP}</span>
+											<span className='JDKS21983719586'>{item.RFC}</span>
+											<span className='Masculino'>{item.GENDER}</span>
+											<span className='_6444612431'>{item.PHONE}</span>
+											<span className='rafaelbellonigmailcom'>{item.EMAIL}</span>
+										</div>
+										<div className="data2">
+											<div className='info_1'>
+												<span className='Mxico'>{item.COUNTRY}</span>
+												<span className='Jalisco'>{item.AD_STATE}</span>
+												<span className='Rocha_1'>{item.CITY}</span>
+												<span className='ValledelReal'> {item.NBHOOD} </span>
+												<span className='_85134'> {item.ZIP_CODE} </span>
+												<span className='SantaMargarita'> {item.STREET} </span>
+												<span className='_175'> {item.EXT_NUM} </span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+                        );
+                    })}
 
-			</div>
 			<div className='DATA'>
 			<div className='data'>
 					<div className='info'>
@@ -73,15 +105,6 @@ function Acceso() {
 					</div>
 				</div>
 				<div className='data2'>
-					<div className='info_1'>
-						<span className='Mxico'>México</span>
-						<span className='Jalisco'>Jalisco</span>
-						<span className='Rocha_1'>Guadalajara</span>
-						<span className='ValledelReal'>Valle del Real</span>
-						<span className='_85134'>85134</span>
-						<span className='SantaMargarita'>Santa Margarita</span>
-						<span className='_175'>175</span>
-					</div>
 					<div className='titles_1'>
 						<span className='Pas'>País</span>
 						<span className='Estado'>Estado</span>

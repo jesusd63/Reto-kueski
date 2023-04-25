@@ -553,8 +553,8 @@
 }
 .acceso_1_acceso .DATA .data2 .info_1 {
 	position: absolute;
-	left: 0px;
-	top: 36px;
+	left: -100px;
+	top: -70px;
 	width: 131px;
 	height: 588px;
 	display: flex;

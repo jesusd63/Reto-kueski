@@ -3,7 +3,7 @@ import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Home from "./pages/Home"
-import Acceso from "./pages/Acceso";
+import Acceso from "./pages/Access";
 
 function App() {
   return (
