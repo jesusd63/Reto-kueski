@@ -3,6 +3,7 @@ import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Home from "./pages/Home"
+import Acceso from "./pages/Acceso";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <ToastContainer position="top-center"/>
       <Routes>
         <Route exact path="/" element={<Home />}/>
+        <Route path="/action/acceso/:id" element={<Acceso/>} />
       </Routes>
     </div>
     </BrowserRouter>

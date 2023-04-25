@@ -52,7 +52,7 @@ const Home = () => {
 				</div>
 			</div>
             <div>
-                <h1 class="table-title">Usuarios</h1>
+                <h1 className="table-title">Usuarios</h1>
             <div/>
             <table className="styled-table"> 
                 <thead> 
@@ -80,9 +80,8 @@ const Home = () => {
                                 <td>{item.CURP}</td>
                                 <td>{item.RFC}</td>
                                 <td>
-                                    {//<button onClick={deleteHandler}  >...</button>
-                                     //{ModalIsOpen ? <Modal user_id={item.USER_ID}/> : null}
-                                    }
+                                    <button onClick={deleteHandler}  >...</button>
+                                    {ModalIsOpen ? <Modal user_id={item.USER_ID}/> : null}
                                     <Link style={{textDecoration: 'none'}} to={`/action/acceso/${item.USER_ID}`}>
                                         <button className="btn"> Acceso </button>
                                     </Link>
