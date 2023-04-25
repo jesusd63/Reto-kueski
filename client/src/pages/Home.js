@@ -27,6 +27,7 @@ const Home = () => {
     setData(response.data);
   };
 
+
   useEffect(() => {
     loadData();
   }, []);
@@ -42,6 +43,7 @@ const Home = () => {
         <div className="user">
           <AiOutlineUser className="account1" />
           <span className="Login">Log in</span>
+
         </div>
         <div className="navlinks">
           <div className="dashboard">
