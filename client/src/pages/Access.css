@@ -1,4 +1,13 @@
-.acceso_1_acceso {
+.close{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 6px;
+	width: 380.591796875px;
+	right: 20px;
+	color: black;
+}
+.acceso {
 	position: relative;
 	left: 0px;
 	top: 0px;
@@ -8,18 +17,18 @@
 	overflow: auto;
 	background: rgba(255,255,255,1.00);
 }
-.acceso_1_acceso .buttonreport {
+.buttonreport {
 	width: 152px;
 	height: 53px;
 }
-.acceso_1_acceso .buttonreport .Rectangle30 {
+.buttonreport .Rectangle30 {
 	position: absolute;
 	left: 4px;
 	top: 0px;
 	width: 94.73684210526315px;
 	height: 100px;
 }
-.acceso_1_acceso .buttonreport .Generarreporte {
+.buttonreport .reporte {
 	position: absolute;
 	left: 880px;
 	top: 150px;
@@ -36,14 +45,14 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .other {
+.other {
 	position: absolute;
 	left: 693px;
 	top: 243px;
 	width: 511px;
 	height: 298px;
 }
-.acceso_1_acceso .other .Otros {
+.other .Otros {
 	position: absolute;
 	left: 0px;
 	top: 0px;
@@ -59,7 +68,8 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .other .Rectangle27 {
+
+.rectangle {
 	position: absolute;
 	left: 15.45361328125px;
 	top: 25.1031494140625px;
@@ -68,14 +78,15 @@
 	background: rgba(255,255,255,0.00);
 	border: 1px solid rgba(0,0,0,1);
 }
-.acceso_1_acceso .head {
+.head {
 	position: absolute;
 	left: 52px;
 	top: 36px;
 	width: 1339px;
 	height: 36px;
 }
-.acceso_1_acceso .head .AccesoRafaelBelloniRocha {
+
+.head .AccesoRafaelBelloniRocha {
 	position: absolute;
 	left: 139px;
 	top: 6px;
@@ -92,7 +103,8 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .head .Fecha18Mar2023 {
+
+.head .Fecha18Mar2023 {
 	position: absolute;
 	left: 668px;
 	top: 6px;
@@ -108,7 +120,8 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .head .logo {
+
+.head .logo {
 	position: absolute;
 	left: 0px;
 	top: 0px;
@@ -117,7 +130,7 @@
 	object-fit: cover;
 	overflow: hidden;
 }
-.acceso_1_acceso .head .closeicon {
+.acceso .head .closeicon {
 	position: absolute;
 	left: 1309px;
 	top: 6px;
@@ -126,21 +139,21 @@
 	object-fit: cover;
 	overflow: hidden;
 }
-.acceso_1_acceso .DATA {
+.acceso .DATA {
 	position: absolute;
 	left: 90px;
 	top: 153px;
 	width: 753px;
 	height: 1170px;
 }
-.acceso_1_acceso .DATA .data {
+.acceso .DATA .data {
 	position: absolute;
 	left: 100px;
 	top: 100px;
 	width: 202px;
 	height: 1093px;
 }
-.acceso_1_acceso .DATA .data .info {
+.acceso .DATA .data .info {
 	position: absolute;
 	left: 0px;
 	top: 35px;
@@ -150,7 +163,7 @@
 	flex-direction: column;
 	box-sizing: border-box;
 }
-.acceso_1_acceso .DATA .data .info .Rafael {
+.acceso .DATA .data .info .Rafael {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -166,7 +179,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info .Belloni {
+.acceso .DATA .data .info .Belloni {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -182,7 +195,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info .Rocha {
+.acceso .DATA .data .info .Rocha {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -198,7 +211,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info ._15011984 {
+.acceso .DATA .data .info ._15011984 {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -214,7 +227,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info .Mexicana {
+.acceso .DATA .data .info .Mexicana {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -230,7 +243,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info .Sonora {
+.acceso .DATA .data .info .Sonora {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -246,7 +259,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info .Personafsica {
+.acceso .DATA .data .info .Personafsica {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -262,7 +275,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info .RONC712938715897A {
+.acceso .DATA .data .info .RONC712938715897A {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -278,7 +291,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info .JDKS21983719586 {
+.acceso .DATA .data .info .JDKS21983719586 {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -294,7 +307,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info .Masculino {
+.acceso .DATA .data .info .Masculino {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -310,7 +323,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info ._6444612431 {
+.acceso .DATA .data .info ._6444612431 {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -326,7 +339,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .info .rafaelbellonigmailcom {
+.acceso .DATA .data .info .rafaelbellonigmailcom {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -342,7 +355,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles {
+.acceso .DATA .data .titles {
 	position: absolute;
 	left: 0px;
 	top: 0px;
@@ -352,7 +365,7 @@
 	flex-direction: column;
 	box-sizing: border-box;
 }
-.acceso_1_acceso .DATA .data .titles .Nombre {
+.acceso .DATA .data .titles .Nombre {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -368,7 +381,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .ApellidoPaterno {
+.acceso .DATA .data .titles .ApellidoPaterno {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -384,7 +397,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .ApellidoMaterno {
+.acceso .DATA .data .titles .ApellidoMaterno {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -400,7 +413,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .Fechadenacimiento {
+.acceso .DATA .data .titles .Fechadenacimiento {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -416,7 +429,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .Nacionalidad {
+.acceso .DATA .data .titles .Nacionalidad {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -432,7 +445,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .Estadodenacimiento {
+.acceso .DATA .data .titles .Estadodenacimiento {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -448,7 +461,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .ActividadEconmica {
+.acceso .DATA .data .titles .ActividadEconmica {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -464,7 +477,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .CURP {
+.acceso .DATA .data .titles .CURP {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -480,7 +493,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .RFC {
+.acceso .DATA .data .titles .RFC {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -496,7 +509,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .Gnero {
+.acceso .DATA .data .titles .Gnero {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -512,7 +525,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .Nmero {
+.acceso .DATA .data .titles .Nmero {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -528,7 +541,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data .titles .Email {
+.acceso .DATA .data .titles .Email {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -544,14 +557,14 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 {
+.acceso .DATA .data2 {
 	position: absolute;
 	left: 618px;
 	top: 458px;
 	width: 135px;
 	height: 712px;
 }
-.acceso_1_acceso .DATA .data2 .info_1 {
+.acceso .DATA .data2 .info_1 {
 	position: absolute;
 	left: -100px;
 	top: -70px;
@@ -561,7 +574,7 @@
 	flex-direction: column;
 	box-sizing: border-box;
 }
-.acceso_1_acceso .DATA .data2 .info_1 .Mxico {
+.acceso .DATA .data2 .info_1 .Mxico {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -577,7 +590,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .info_1 .Jalisco {
+.acceso .DATA .data2 .info_1 .Jalisco {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -593,7 +606,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .info_1 .Rocha_1 {
+.acceso .DATA .data2 .info_1 .Rocha_1 {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -609,7 +622,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .info_1 .ValledelReal {
+.acceso .DATA .data2 .info_1 .ValledelReal {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -625,7 +638,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .info_1 ._85134 {
+.acceso .DATA .data2 .info_1 ._85134 {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -641,7 +654,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .info_1 .SantaMargarita {
+.acceso .DATA .data2 .info_1 .SantaMargarita {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -657,7 +670,7 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .info_1 ._175 {
+.acceso .DATA .data2 .info_1 ._175 {
 	position: relative;
 	flex: none;
 	margin-bottom: 70px;
@@ -673,14 +686,14 @@
 	font-weight: 400;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .titles_1 {
+.acceso .DATA .data2 .titles_1 {
 	position: absolute;
 	left: 0px;
 	top: 0px;
 	width: 135px;
 	height: 682px;
 }
-.acceso_1_acceso .DATA .data2 .titles_1 .Pas {
+.acceso .DATA .data2 .titles_1 .Pas {
 	position: absolute;
 	left: 0px;
 	top: 0px;
@@ -696,7 +709,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .titles_1 .Estado {
+.acceso .DATA .data2 .titles_1 .Estado {
 	position: absolute;
 	left: 0px;
 	top: 94px;
@@ -712,7 +725,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .titles_1 .Ciudad {
+.acceso .DATA .data2 .titles_1 .Ciudad {
 	position: absolute;
 	left: 0px;
 	top: 188px;
@@ -728,7 +741,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .titles_1 .Colonia {
+.acceso .DATA .data2 .titles_1 .Colonia {
 	position: absolute;
 	left: 0px;
 	top: 282px;
@@ -744,7 +757,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .titles_1 .Zip {
+.acceso .DATA .data2 .titles_1 .Zip {
 	position: absolute;
 	left: 0px;
 	top: 376px;
@@ -760,7 +773,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .titles_1 .Calle {
+.acceso .DATA .data2 .titles_1 .Calle {
 	position: absolute;
 	left: 0px;
 	top: 470px;
@@ -774,7 +787,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .titles_1 .Nmeroexterior {
+.acceso .DATA .data2 .titles_1 .Nmeroexterior {
 	position: absolute;
 	left: 0px;
 	top: 564px;
@@ -790,7 +803,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .titles_1 .Nmerointerior {
+.acceso .DATA .data2 .titles_1 .Nmerointerior {
 	position: absolute;
 	left: 0px;
 	top: 658px;
@@ -806,7 +819,7 @@
 	font-weight: 700;
 	line-height: 24px;
 }
-.acceso_1_acceso .DATA .data2 .Vector10 {
+.acceso .DATA .data2 .Vector10 {
 	position: absolute;
 	left: 3.5px;
 	top: 712px;

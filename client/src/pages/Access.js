@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Access.css"
 import axios from "axios";
 import React, {useState, useEffect} from 'react';
+import { AiFillCloseCircle } from "react-icons/ai";
 
 function Access() {
 
@@ -23,21 +24,23 @@ function Access() {
 	console.log(data);
 		
     return(
-        <div className='acceso_1_acceso'>
+        <div className='acceso'>
 			<div className='buttonreport'>
-				<div className='Rectangle30'/>
-				<span className='Generarreporte'>Generar reporte</span>
+				<span className='reporte'>Generar reporte</span>
 			</div>
 			<div className='other'>
 				<span className='Otros'>Otros</span>
-				<div className='Rectangle27'/>
+				<div className='rectangle'/>
 			</div>
 				{data.map((item, index) => {
                         return (
 							<div key={item.USER_ID}>
 								<div className="head">
 									<span className='AccesoRafaelBelloniRocha'>Acceso: {item.USER_NAME} {item.USER_LAST_NAME} {item.USER_SEC_LAST_NAME}</span>
-									<span className='Fecha18Mar2023'>Fecha: 18/Mar/2023</span>
+									<span className='Fecha18Mar2023'>Fecha: 18/Mar/2023</span>								
+									<Link to={`/`}>
+										<AiFillCloseCircle className='close'/>
+                        			</Link>
 								</div>
 								<div className="DATA">
 									<div className="data">

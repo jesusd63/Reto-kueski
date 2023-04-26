@@ -34,21 +34,13 @@ const Logs = () => {
 					<div className='dashboard'>
                         <Link to={`/`}>
                             < AiFillHome className='casa1'/>
+                            <span className='Dashboard'>Dashboard</span>
                         </Link>
-                        
-						<span className='Dashboard'>Dashboard</span>
 					</div>
-
-                    <div>
-                        <Link style={{textDecoration: 'none'}} to={`/menu/arco`}>
-                            <CiSettings className='arco1'/>
-						    ARCO logs
-                        </Link>
-                    </div>
 				</div>
 			</div>
             <div>
-                <h1 class="table-title">Usuarios</h1>
+                <h1 class="table-title">ARCO Logs</h1>
             <div/>
             <table className="styled-table"> 
                 <thead> 

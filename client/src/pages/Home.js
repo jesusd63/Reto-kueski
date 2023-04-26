@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { AiFillHome, AiOutlineUser, AiOutlineMenu } from "react-icons/ai";
+import { AiFillHome, AiOutlineUser, AiOutlineMenu, AiOutlineClockCircle } from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
 import Modal from "../Components/Modal";
 import { Link, useNavigate } from "react-router-dom";
@@ -45,20 +45,20 @@ const Home = () => {
         </div>
         <div className="navlinks">
           <div className="dashboard">
-          <Link to={`/`}>
-            < AiFillHome className='casa1'/>
-          </Link>
-            <span className="Dashboard">Dashboard</span>
+            <Link to={`/`}>
+              <AiFillHome className="casa1" />
+              <span className="Dashboard">Dashboard</span>
+            </Link>
+            
           </div>
-          <div className="dashboard">
-          <Link  to={`/menu/arco`}>
-            <AiFillHome className='casa1'/>
-          </Link>
-            <span className="Dashboard">Logs</span>
+          <div className="logs">
+            <Link to={`/menu/arco`}>
+              <AiOutlineClockCircle className="logs1" />
+              <span className="Logs">Logs</span>
+            </Link>
+            
           </div>
-
         </div>
-
       </div>
       <div>
         <h1 className="table-title">Usuarios</h1>
@@ -90,7 +90,7 @@ const Home = () => {
                   <td>{item.RFC}</td>
                   <td>
                     <div className="dropdown">
-                      <AiOutlineMenu className="dropbtn">ARCO</AiOutlineMenu>
+                      <AiOutlineMenu className="dropbtn"></AiOutlineMenu>
                       <div className="dropdown-content">
                         <Link
                           style={{ textDecoration: "none" }}

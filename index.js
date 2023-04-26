@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-//const db = mysql.createConnection('mysql://0rb7mspynjfen5yjclhk:pscale_pw_bwjOza1e1n2htynSkPDiiEiJUYuGBvr9O2O45u6OxXX@aws.connect.psdb.cloud/kueski_data?ssl={"rejectUnauthorized":true}')
+
 
 
 app.get("/menu", (req, res) => {

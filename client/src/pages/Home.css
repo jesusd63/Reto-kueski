@@ -112,14 +112,14 @@
     color: white;
 }
 
-.ajustes {
+.logs {
 	position: absolute;
 	width: 118px;
 	height: 20px;
 	left: 0px;
 	top: 60px;
 }
-.settings1 {
+.logs1 {
 	position: absolute;
 	left: 0px;
 	top: 0px;
@@ -129,7 +129,7 @@
 	overflow: hidden;
     color: white;
 }
-.Ajustes {
+.Logs {
 	position: absolute;
 	left: 35px;
 	top: 4px;
