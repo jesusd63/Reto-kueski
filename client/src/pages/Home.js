@@ -6,15 +6,17 @@ import { AiFillHome, AiOutlineUser, AiOutlineMenu, AiOutlineClockCircle } from "
 import { CiSettings } from "react-icons/ci";
 import Modal from "../Components/Modal";
 import { Link, useNavigate } from "react-router-dom";
+import Backdrop from "../Components/Backdrop"
+import Cancel from "./Cancel";
 
 const Home = () => {
-  const [ModalIsOpen, setModalIsOpen] = useState(false);
+  const [CancelIsOpen, setCancelIsOpen] = useState(false);
 
-  function deleteHandler() {
-    if (ModalIsOpen) {
-      setModalIsOpen(false);
+  function cancelHandler() {
+    if (CancelIsOpen) {
+      setCancelIsOpen(false);
     } else {
-      setModalIsOpen(true);
+      setCancelIsOpen(true);
     }
   }
 
@@ -33,6 +35,8 @@ const Home = () => {
 
   return (
     <div style={{ marginTop: "7vh" }}>
+      {CancelIsOpen ? <Cancel onCancel={cancelHandler} /> : null}
+      {CancelIsOpen && <Backdrop onCancel={cancelHandler}/>}
       <div className="sidebar">
         <img
           className="logo"
@@ -104,7 +108,7 @@ const Home = () => {
                         >
                           <button className="btn">Rectificación</button>
                         </Link>
-                        <button className="btn"> Cancelación </button>
+                        <button className="btn" onClick={cancelHandler}> Cancelación </button>
                         <button className="btn"> Oposición </button>
                       </div>
                     </div>

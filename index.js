@@ -10,8 +10,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 
-
-
 app.get("/menu", (req, res) => {
     const sqlGet = "SELECT * FROM users";
     db.query(sqlGet, (err, result) => {
