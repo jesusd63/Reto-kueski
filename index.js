@@ -63,9 +63,6 @@ db.query(sqlDel2, [userid], (err, result) => {
 });
 });
 
-
-
-
 app.get("/", (req, res) => {
     //const sqlInsert = 
       //  "INSERT INTO users (user_id, email, name, last_name, second_last_name, curp, rfc) VALUES (2, 'rafaelbelloni@gmail.com', 'Rafael', 'Belloni', 'Rocha', 'JDKS984304JDNEF01', 'JDKS984304342')";

@@ -96,20 +96,16 @@ const Home = () => {
                     <div className="dropdown">
                       <AiOutlineMenu className="dropbtn"></AiOutlineMenu>
                       <div className="dropdown-content">
-                        <Link
-                          style={{ textDecoration: "none" }}
-                          to={`/action/acceso/${item.USER_ID}`}
-                        >
+                        <Link style={{ textDecoration: "none" }} to={`/action/acceso/${item.USER_ID}`}>
                           <button className="btn"> Acceso </button>
                         </Link>
-                        <Link
-                          style={{ textDecoration: "none" }}
-                          to={`/action/rect/${item.USER_ID}`}
-                        >
+                        <Link style={{ textDecoration: "none" }} to={`/action/rect/${item.USER_ID}`}>
                           <button className="btn">Rectificación</button>
                         </Link>
                         <button className="btn" onClick={cancelHandler}> Cancelación </button>
-                        <button className="btn"> Oposición </button>
+                        <Link style={{ textDecoration: "none" }} to={`/action/op/${item.USER_ID}`}>
+                          <button className="btn"> Oposición </button>
+                        </Link>
                       </div>
                     </div>
                   </td>

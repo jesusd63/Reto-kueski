@@ -3,17 +3,17 @@ import "./Modal.css";
 
 function Modal(props) {
 
+    function cancelHandler(){
+        props.OnCancel();
+    }
+
+    function confirmHandler(){
+        props.OnConfirm();
+    }
+
     return(
-        <div className="modal">
-            <Link style={{textDecoration: 'none'}} to={`/action/acceso/${props.user_id}`}>
-                <button className="btn"> Acceso </button>
-            </Link>
-            <Link style={{textDecoration: 'none'}} to={`/action/rect/${props.user_id}`}>
-                <button className="btn">Rectificación</button>
-            </Link>
-                <button className="btn"> Cancelación </button>
-                <button className="btn"> Oposición </button>
-        </div>
+        <h1>Acción terminada</h1>
+        
     );
 }
 
