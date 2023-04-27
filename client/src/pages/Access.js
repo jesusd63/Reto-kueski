@@ -1,10 +1,16 @@
 import { useParams, Link } from "react-router-dom";
-import "./Access.css"
+import "./Access2.css"
 import axios from "axios";
 import React, {useState, useEffect} from 'react';
 import { AiFillCloseCircle } from "react-icons/ai";
 
 function Access() {
+
+	const today = new Date();
+  	const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
+  	const formattedDate = today.toLocaleDateString('es-ES', options);
+	const masculino = "Masculino";
+	const femenino = "Femenino";	
 
     const routeParams = useParams();
 
@@ -36,8 +42,8 @@ function Access() {
                         return (
 							<div key={item.USER_ID}>
 								<div className="head">
-									<span className='AccesoRafaelBelloniRocha'>Acceso: {item.USER_NAME} {item.USER_LAST_NAME} {item.USER_SEC_LAST_NAME}</span>
-									<span className='Fecha18Mar2023'>Fecha: 18/Mar/2023</span>								
+									<span className='Name'>Acceso: {item.USER_NAME} {item.USER_LAST_NAME} {item.USER_SEC_LAST_NAME}</span>
+									<span className='Date'>Fecha: {formattedDate} </span>								
 									<Link to={`/`}>
 										<AiFillCloseCircle className='close'/>
                         			</Link>
@@ -45,28 +51,28 @@ function Access() {
 								<div className="DATA">
 									<div className="data">
 										<div className='info'>
-											<span className='Rafael'>{item.USER_NAME}</span>
-											<span className='Belloni'>{item.USER_LAST_NAME}</span>
-											<span className='Rocha'>{item.USER_SEC_LAST_NAME}</span>
-											<span className='_15011984'> {item.BIRTH.slice(0,10)} </span>
-											<span className='Mexicana'>{item.NATIONALITY}</span>
-											<span className='Sonora'>{item.STATE}</span>
-											<span className='Personafsica'>{item.ECONOMIC_ACTIVITY}</span>
-											<span className='RONC712938715897A'>{item.CURP}</span>
-											<span className='JDKS21983719586'>{item.RFC}</span>
-											<span className='Masculino'>{item.GENDER}</span>
-											<span className='_6444612431'>{item.PHONE}</span>
-											<span className='rafaelbellonigmailcom'>{item.EMAIL}</span>
+											<span className='bd'>{item.USER_NAME}</span>
+											<span className='bd'>{item.USER_LAST_NAME}</span>
+											<span className='bd'>{item.USER_SEC_LAST_NAME}</span>
+											<span className='bd'>{item.BIRTH ? item.BIRTH.slice(0,10) : null}</span>
+											<span className='bd'>{item.NATIONALITY}</span>
+											<span className='bd'>{item.STATE}</span>
+											<span className='bd'>{item.ECONOMIC_ACTIVITY}</span>
+											<span className='bd'>{item.CURP}</span>
+											<span className='bd'>{item.RFC}</span>
+											<span className='bd'>{item.GENDER ? femenino : masculino}</span>
+											<span className='bd'>{item.PHONE}</span>
+											<span className='bd'>{item.EMAIL}</span>
 										</div>
 										<div className="data2">
 											<div className='info_1'>
-												<span className='Mxico'>{item.COUNTRY}</span>
-												<span className='Jalisco'>{item.AD_STATE}</span>
-												<span className='Rocha_1'>{item.CITY}</span>
-												<span className='ValledelReal'> {item.NBHOOD} </span>
-												<span className='_85134'> {item.ZIP_CODE} </span>
-												<span className='SantaMargarita'> {item.STREET} </span>
-												<span className='_175'> {item.EXT_NUM} </span>
+												<span className='bd'>{item.COUNTRY}</span>
+												<span className='bd'>{item.AD_STATE}</span>
+												<span className='bd'>{item.CITY}</span>
+												<span className='bd'> {item.NBHOOD} </span>
+												<span className='bd'> {item.ZIP_CODE} </span>
+												<span className='bd'> {item.STREET} </span>
+												<span className='bd'> {item.EXT_NUM} </span>
 											</div>
 										</div>
 									</div>
@@ -77,32 +83,32 @@ function Access() {
                     })}
 
 			<div className='DATA'>
-			<div className='data'>
+				<div className='data'>
 					<div className='titles'>
-						<span className='Nombre'>Nombre</span>
-						<span className='ApellidoPaterno'>Apellido Paterno</span>
-						<span className='ApellidoMaterno'>Apellido Materno</span>
-						<span className='Fechadenacimiento'>Fecha de nacimiento </span>
-						<span className='Nacionalidad'>Nacionalidad</span>
-						<span className='Estadodenacimiento'>Estado de nacimiento</span>
-						<span className='ActividadEconmica'>Actividad Económica</span>
-						<span className='CURP'>CURP</span>
-						<span className='RFC'>RFC</span>
-						<span className='Gnero'>Género</span>
-						<span className='Nmero'>Número</span>
-						<span className='Email'>Email</span>
+						<span>Nombre</span>
+						<span>Apellido Paterno</span>
+						<span>Apellido Materno</span>
+						<span>Fecha de nacimiento </span>
+						<span>Nacionalidad</span>
+						<span>Estado de nacimiento</span>
+						<span>Actividad Económica</span>
+						<span>CURP</span>
+						<span>RFC</span>
+						<span>Género</span>
+						<span>Número</span>
+						<span>Email</span>
 					</div>
 				</div>
 				<div className='data2'>
-					<div className='titles_1'>
-						<span className='Pas'>País</span>
-						<span className='Estado'>Estado</span>
-						<span className='Ciudad'>Ciudad</span>
-						<span className='Colonia'>Colonia </span>
-						<span className='Zip'>Zip</span>
-						<span className='Calle'>Calle</span>
-						<span className='Nmeroexterior'>Número exterior</span>
-						<span className='Nmerointerior'>Número interior</span>
+					<div className='titles'>
+						<span>País</span>
+						<span>Estado</span>
+						<span>Ciudad</span>
+						<span>Colonia </span>
+						<span>Zip</span>
+						<span>Calle</span>
+						<span>Número exterior</span>
+						<span>Número interior</span>
 					</div>
 				</div>
 			</div>
