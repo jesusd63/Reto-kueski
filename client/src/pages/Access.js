@@ -42,6 +42,7 @@ function Access() {
                         return (
 							<div key={item.USER_ID}>
 								<div className="head">
+									<img className="logo" alt="kueski logo" src={require("../assets/kuski_logo_black.png")}/>
 									<span className='Name'>Acceso: {item.USER_NAME} {item.USER_LAST_NAME} {item.USER_SEC_LAST_NAME}</span>
 									<span className='Date'>Fecha: {formattedDate} </span>								
 									<Link to={`/`}>
