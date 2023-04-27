@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import { toast } from "react-toastify";
 import axios from "axios";
 import { AiFillHome, AiOutlineUser, AiOutlineMenu, AiOutlineClockCircle } from "react-icons/ai";
-import { CiSettings } from "react-icons/ci";
-import Modal from "../Components/Modal";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Backdrop from "../Components/Backdrop"
 import Cancel from "./Cancel";
 import Popup from "reactjs-popup";

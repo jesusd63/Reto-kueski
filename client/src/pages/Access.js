@@ -25,7 +25,7 @@ function Access() {
 
     useEffect(() => {
         loadData();
-    }, []);
+    }, );
 
 	console.log(data);
 		
