@@ -122,8 +122,8 @@
 }
 
 .acceso .DATA .data {
+  margin-top: 20px;
   left: 100px;
-  top: 100px;
   width: 202px;
   height: 1093px;
 }
@@ -131,7 +131,7 @@
 .acceso .DATA .data .info {
   position: absolute;
   left: 0;
-  top: 0px;
+  margin-top: 0px;
   width: 202px;
   height: 1058px;
   display: block;
