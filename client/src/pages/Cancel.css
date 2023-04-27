@@ -1,10 +1,10 @@
 .cancel {
 	position: relative;
 	left: 0px;
-	top: 0px;
+	top: 75px;
 	margin: auto;
-	width: 80%;
-	height: 80vh;
+	width: 55%;
+	height: 70vh;
 	overflow: auto;
 	background: rgba(255,255,255,1.00);
     z-index: 10;
@@ -20,43 +20,40 @@
 }
 .cancel .head {
 	position: absolute;
-	left: 172px;
-	top: 122px;
-	width: 1032px;
-	height: 72px;
+	left: 170px;
+	top: 30px;
 	display: flex;
 	align-items: center;
 	color: rgba(0,0,0,1.00);
-	font-family: Poppins;
-	font-size: 48px;
+	font-family: inherit;
+	font-size: 25px;
 	font-weight: 400;
 	line-height: 72px;
 }
 .cancel .info {
 	position: absolute;
-	left: 176px;
-	top: 244px;
-	width: 1034px;
+	left: 165px;
+	top: 100px;
+	width: 530px;
 	height: 120px;
 	display: flex;
-	align-items: center;
 	color: rgba(0,0,0,1.00);
-	font-family: Poppins;
-	font-size: 26px;
+	font-family: inherit;
+	font-size: 16px;
 	font-weight: 400;
-	line-height: 39px;
+	line-height: 25px;
 }
 .cancel .razon {
 	position: absolute;
 	left: 176px;
-	top: 424px;
+	top: 224px;
 	width: 238px;
 	height: 40px;
 	display: flex;
 	align-items: center;
 	color: rgba(0,0,0,1.00);
 	font-family: Poppins;
-	font-size: 26px;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 39px;
 }
@@ -72,7 +69,7 @@
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	width: 1036px;
+	width: 530px;
 	height: 316px;
 	border-radius: 20px;
 	border: 1px solid rgba(0,0,0,1);
