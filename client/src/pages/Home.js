@@ -8,8 +8,13 @@ import Modal from "../Components/Modal";
 import { Link, useNavigate } from "react-router-dom";
 import Backdrop from "../Components/Backdrop"
 import Cancel from "./Cancel";
+import Popup from "reactjs-popup";
 
 const Home = () => {
+
+  const [open, setOpen] = useState(false);
+  const closeModal = () => setOpen(false);
+
   const [CancelIsOpen, setCancelIsOpen] = useState(false);
 
   function cancelHandler() {
@@ -102,7 +107,11 @@ const Home = () => {
                         <Link style={{ textDecoration: "none" }} to={`/action/rect/${item.USER_ID}`}>
                           <button className="btn">Rectificación</button>
                         </Link>
-                        <button className="btn" onClick={cancelHandler}> Cancelación </button>
+                        <button type="button" className="btn" onClick={() => setOpen(o => !o)}>Cancelación</button>
+                        <Popup open={open} closeOnDocumentClick onClose={closeModal}>
+                          <Backdrop />
+                          <Cancel />
+                        </Popup>
                         <Link style={{ textDecoration: "none" }} to={`/action/op/${item.USER_ID}`}>
                           <button className="btn"> Oposición </button>
                         </Link>
