@@ -1,7 +1,15 @@
+.close{
+	height: 30px;
+	width: 30px;
+	margin-right: -20%;
+	margin-top: 1%;
+	cursor: pointer;
+}
+
 .cancel {
 	position: relative;
 	left: 0px;
-	top: 75px;
+	top: 60px;
 	margin: auto;
 	width: 55%;
 	height: 70vh;
@@ -9,48 +17,40 @@
 	background: rgba(255,255,255,1.00);
     z-index: 10;
 }
-.cancel .closeicon {
-	position: absolute;
-	left: 2782px;
-	top: 42px;
-	width: 60px;
-	height: 60px;
-	object-fit: cover;
-	overflow: hidden;
-}
+
 .cancel .head {
-	position: absolute;
 	left: 170px;
 	top: 30px;
 	display: flex;
 	align-items: center;
 	color: rgba(0,0,0,1.00);
 	font-family: inherit;
-	font-size: 25px;
-	font-weight: 400;
+	font-size: 23px;
+	font-weight: 600;
 	line-height: 72px;
+	width: 510px;
 }
 .cancel .info {
 	position: absolute;
-	left: 165px;
-	top: 100px;
+	left: 155px;
+	top: 85px;
 	width: 530px;
 	height: 120px;
 	display: flex;
 	color: rgba(0,0,0,1.00);
 	font-family: inherit;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 400;
 	line-height: 25px;
 }
 .cancel .razon {
 	position: absolute;
 	left: 176px;
-	top: 224px;
-	width: 238px;
+	top: 190px;
+	width: 150px;
 	height: 40px;
 	display: flex;
-	align-items: center;
+
 	color: rgba(0,0,0,1.00);
 	font-family: Poppins;
 	font-size: 16px;
@@ -60,8 +60,8 @@
 .cancel .input {
 	position: absolute;
 	left: 170px;
-	top: 464px;
-	width: 1036px;
+	top: 225px;
+	width: 505px;
 	height: 316px;
 	border-radius: 20px;
 }
@@ -69,25 +69,17 @@
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	width: 530px;
-	height: 316px;
+	width: 505px;
+	height: 220px;
 	border-radius: 20px;
 	border: 1px solid rgba(0,0,0,1);
 	box-sizing: border-box;
 }
-.cancel .closeicon_1 {
-	position: absolute;
-	left: 1338px;
-	top: 40px;
-	width: 60px;
-	height: 60px;
-	object-fit: cover;
-	overflow: hidden;
-}
+
 .cancel .Cambios {
 	position: absolute;
-	left: 868px;
-	top: 842px;
+	left: 423px;
+	top: 470px;
 	width: 342px;
 	height: 72px;
 }
@@ -95,20 +87,19 @@
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	width: 342px;
-	height: 72px;
+	width: 250px;
+	height: 45px;
 	background: rgba(54,0,234,1.00);
+	border-radius: 15px;
 }
 .cancel .Cambios .cancel-btn {
 	position: absolute;
-	left: 30px;
-	top: 17.01904296875px;
-	width: 308px;
-	height: 35.32080078125px;
+	left: 40px;
+	top: 2.5px;
+
 	color: rgba(245,246,251,1.00);
-	border: 1px solid rgba(245.00000059604645,246.0000005364418,251.00000023841858,1);
-	font-family: Poppins;
-	font-size: 26px;
-	font-weight: 400;
+	font-family: inherit;
+	font-size: 16px;
+	font-weight: 600;
 	line-height: 39px;
 }
