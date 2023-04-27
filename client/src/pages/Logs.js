@@ -57,7 +57,7 @@ const Logs = () => {
                                 <th scope="row">{item.ACTION_ID}</th>
                                 <td>{item.USER_ID}</td>
                                 <td>{item.ACTION_TYPE}</td>
-                                <td>{item.ARCO_DATE}</td>
+                                <td>{item.ARCO_DATE ? item.ARCO_DATE.slice(0,10) : null}</td>
                                 <td>{item.COMMENT}</td>
                             </tr>
                         );

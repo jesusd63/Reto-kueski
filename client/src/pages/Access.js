@@ -61,7 +61,7 @@ function Access() {
 											<span className='bd'>{item.ECONOMIC_ACTIVITY}</span>
 											<span className='bd'>{item.CURP}</span>
 											<span className='bd'>{item.RFC}</span>
-											<span className='bd'>{item.GENDER ? femenino : masculino}</span>
+											<span className='bd'>{item.GENDER === 1 ? femenino : masculino}</span>
 											<span className='bd'>{item.PHONE}</span>
 											<span className='bd'>{item.EMAIL}</span>
 										</div>

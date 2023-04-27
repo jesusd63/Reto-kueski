@@ -6,7 +6,7 @@ import Home from "./pages/Home"
 import Access from "./pages/Access";
 import Modal from "./Components/Modal";
 import Logs from "./pages/Logs";
-
+import Rectification from "./pages/Rectification"
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />}/>
         <Route path="/action/acceso/:id" element={<Access/>} />
+        <Route path="/action/rect/:id" element={<Rectification/>} />
         <Route path="/action/op/:id" element={<Modal/>} />
         <Route path="/menu/arco" element={<Logs/>} />
       </Routes>

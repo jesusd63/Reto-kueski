@@ -15,6 +15,31 @@ app.get("/menu", (req, res) => {
     });
 });
 
+app.get("/action/rect/:user/:nom/:lname/:slname/:birth/:nac/:est/:gen/:num/:email", (req, res) => {
+  const userid=req.params.user;
+  const name=req.params.nom;
+  const lname=req.params.lname;
+  const slname=req.params.slname;
+  const birth=req.params.birth;
+  const nat=req.params.nac;
+  const estado=req.params.est;
+  const genero=req.params.gen;
+  const cell=req.params.num;
+  const email=req.params.email;
+
+  const sqlRect = "UPDATE kueski_data.users SET USER_NAME = '"+name+"', USER_LAST_NAME='"+lname+"', USER_SEC_LAST_NAME='"+slname+"', BIRTH='"+birth+"', NATIONALITY='"+nat+"', STATE='"+estado+"', GENDER="+genero+", PHONE="+cell+", EMAIL='"+email+"', UPDATED_AT=current_date() WHERE USER_ID="+userid+";";
+  const sqlRect2= "insert into kueski_data.arco (USER_ID, ACTION_TYPE, ARCO_DATE) values ("+userid+", 'R', current_date());";
+
+  db.query(sqlRect, [userid,name, lname, slname, birth, nat, estado, genero, cell, email], (err, result) => {
+    res.send(result);
+
+  });
+  db.query(sqlRect2, [userid,name, lname, slname, birth, nat, estado, genero, cell, email], (err, result) => {
+    res.send(result);
+
+  });
+});
+
 app.get("/menu/arco", (req, res) => {
   const sqlGet = "SELECT * FROM arco";
   db.query(sqlGet, (err, result) => {
@@ -26,7 +51,7 @@ app.get("/menu/arco", (req, res) => {
 app.get("/action/acceso/:user", (req, res) => {
   const userid=req.params.user;
   const sqlGet = "select users.USER_ID, users.USER_NAME, users.USER_LAST_NAME, users.USER_SEC_LAST_NAME, users.BIRTH, users.NATIONALITY, users.STATE, ECONOMIC_ACTIVITY, users.CURP, users.RFC, users.GENDER, users.PHONE, users.EMAIL, users.INFO_JSON, addresses.COUNTRY, addresses.STATE AS AD_STATE, addresses.CITY, addresses.NBHOOD, addresses.ZIP_CODE, addresses.STREET, addresses.EXT_NUM from users left join addresses on users.USER_ID=addresses.USER_ID having users.USER_ID=? order by users.USER_ID limit 1;";
-  db.query(sqlGet, [userid], (err, result) => {
+  db.query(sqlGet, [userid], (err, result) => { 
       res.send(result);
     
       console.log(result);
