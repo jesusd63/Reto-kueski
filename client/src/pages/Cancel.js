@@ -7,7 +7,7 @@ export default function Cancel(props) {
     <div className="cancel">
       <span className="head">Cancelación - Rafael Nicolas Belloni Rocha</span>
       <div>
-        <AiFillCloseCircle onClick={props.onCancel} className="close" />
+        <AiFillCloseCircle onClick={props.onClose} className="close" />
       </div>
       <span className="info">
         Por este medio y según los alineamientos de los derechos ARCO con los

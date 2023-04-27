@@ -12,6 +12,10 @@ const Home = () => {
   const [open, setOpen] = useState(false);
   const closeModal = () => setOpen(false);
 
+  function cancel_popup(){
+    setOpen(true);
+  }
+
   const [CancelIsOpen, setCancelIsOpen] = useState(false);
 
   function cancelHandler() {
@@ -104,10 +108,10 @@ const Home = () => {
                         <Link style={{ textDecoration: "none" }} to={`/action/rect/${item.USER_ID}`}>
                           <button className="btn">Rectificación</button>
                         </Link>
-                        <button type="button" className="btn" onClick={() => setOpen(o => !o)}>Cancelación</button>
-                        <Popup open={open} closeOnDocumentClick onClose={closeModal}>
-                          <Backdrop />
-                          <Cancel />
+                        <button type="button" className="btn" onClick={cancel_popup} >Cancelación</button>
+                        <Popup open={open} lockScroll={true} nested>
+                          <Cancel onClose={closeModal} />
+                          <Backdrop onClose={closeModal}/>
                         </Popup>
                         <Link style={{ textDecoration: "none" }} to={`/action/op/${item.USER_ID}`}>
                           <button className="btn"> Oposición </button>
