@@ -191,14 +191,7 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-}
-
-.btn-acceso,
-.btn-rect,
-.btn-cancel,
-.btn-op {
-    font-family: inherit;
-    font-size: .8rem;
+	font-family: inherit;
 }
 
 .dropbtn {

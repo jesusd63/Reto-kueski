@@ -6,7 +6,9 @@ export default function Cancel(props) {
   return (
     <div className="cancel">
       <span className="head">Cancelación - Rafael Nicolas Belloni Rocha</span>
-		<AiFillCloseCircle onClick={props.onCancel} className="close" />
+      <div>
+        <AiFillCloseCircle onClick={props.onCancel} className="close" />
+      </div>
       <span className="info">
         Por este medio y según los alineamientos de los derechos ARCO con los
         que cuenta, el usuario Rafael Nicolas Belloni Rocha solicita la
@@ -17,8 +19,7 @@ export default function Cancel(props) {
         <div className="Rectangle29" />
       </div>
       <div className="Cambios">
-        <div className="Rectangle28" />
-        <span className="cancel-btn">Cancelar información</span>
+        <button className="cancel-btn">Cancelar información</button>
       </div>
     </div>
   );

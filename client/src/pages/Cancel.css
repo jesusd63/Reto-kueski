@@ -1,17 +1,17 @@
 .close{
 	height: 30px;
 	width: 30px;
-	margin-right: .1%;
-	margin-top: 1.1%;
+	margin-left: 93%;
+	margin-top: 3%;
 	cursor: pointer;
 }
 
 .cancel {
 	position: relative;
 	left: 0px;
-	top: 60px;
+	top: 25px;
 	margin: auto;
-	width: 1000px;
+	width: 50vw;
 	height: 70vh;
 	overflow: auto;
 	background: rgba(255,255,255,1.00);
@@ -19,7 +19,7 @@
 }
 
 .cancel .head {
-	left: 170px;
+	left: 155px;
 	top: 30px;
 	display: flex;
 	align-items: center;
@@ -87,9 +87,9 @@
 .cancel .Cambios .cancel-btn {
 	position: absolute;
 	right: 32%;
-	top: 2.5px;
-	width: 250px;
-	height: 45px;
+	top: 5%;
+	width: 70%;
+	height: 100%;
 	background: rgba(54,0,234);
 	color: rgba(245,246,251);
 	font-family: inherit;
@@ -97,4 +97,5 @@
 	font-weight: 600;
 	border-radius: 15px;
 	cursor: pointer;
+	text-align: center;
 }
