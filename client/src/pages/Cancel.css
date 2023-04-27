@@ -1,8 +1,8 @@
 .close{
-	width: 30px;
 	height: 30px;
-	transform: translateX(30%);
-	transform: translateY(50%);
+	width: 30px;
+	margin-right: -20%;
+	margin-top: 1%;
 	cursor: pointer;
 }
 
@@ -19,7 +19,6 @@
 }
 
 .cancel .head {
-
 	left: 170px;
 	top: 30px;
 	display: flex;
@@ -29,6 +28,7 @@
 	font-size: 23px;
 	font-weight: 600;
 	line-height: 72px;
+	width: 510px;
 }
 .cancel .info {
 	position: absolute;
@@ -47,7 +47,7 @@
 	position: absolute;
 	left: 176px;
 	top: 190px;
-	width: 238px;
+	width: 150px;
 	height: 40px;
 	display: flex;
 
@@ -61,7 +61,7 @@
 	position: absolute;
 	left: 170px;
 	top: 225px;
-	width: 1036px;
+	width: 505px;
 	height: 316px;
 	border-radius: 20px;
 }
@@ -75,15 +75,7 @@
 	border: 1px solid rgba(0,0,0,1);
 	box-sizing: border-box;
 }
-.cancel .closeicon_1 {
-	position: absolute;
-	left: 1338px;
-	top: 40px;
-	width: 60px;
-	height: 60px;
-	object-fit: cover;
-	overflow: hidden;
-}
+
 .cancel .Cambios {
 	position: absolute;
 	left: 423px;
