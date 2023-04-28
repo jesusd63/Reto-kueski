@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import axios from "axios";
-import { AiFillHome, AiOutlineUser, AiOutlineMenu, AiOutlineClockCircle } from "react-icons/ai";
+import { AiFillHome, AiOutlineMenu, AiOutlineClockCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Backdrop from "../Components/Backdrop"
 import Cancel from "./Cancel";
@@ -49,10 +49,6 @@ const Home = () => {
           alt="kueski logo"
           src={require("../assets/desktop_logo.png")}
         />
-        <div className="user">
-          <AiOutlineUser className="account1" />
-          <span className="Login">Log in</span>
-        </div>
         <div className="navlinks">
           <div className="dashboard">
             <Link to={`/`}>

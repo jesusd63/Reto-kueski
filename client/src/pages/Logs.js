@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import "./Home.css";
 import axios from "axios";
-import { AiFillHome, AiOutlineUser} from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
 import {Link} from "react-router-dom";
 
 
@@ -23,10 +23,6 @@ const Logs = () => {
         <div style={{marginTop: "7vh"}}>
             <div className='sidebar'>
 				    <img className='logo' alt = "kueski logo" src = {require("../assets/desktop_logo.png")}/>
-				<div className='user'>
-                    <AiOutlineUser className='account1'/>
-					<span className='Login'>Log in</span>
-				</div>
 				<div className='navlinks'>
 					<div className='dashboard'>
                         <Link to={`/`}>
