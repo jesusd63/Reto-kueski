@@ -9,8 +9,6 @@ function Access() {
 	const today = new Date();
   	const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
   	const formattedDate = today.toLocaleDateString('es-ES', options);
-	const masculino = "Masculino";
-	const femenino = "Femenino";	
 
     const routeParams = useParams();
 
@@ -27,7 +25,16 @@ function Access() {
         loadData();
     }, );
 
-	console.log(data);
+	function calc(GENDER){ 
+		if(GENDER == 0){
+			return "Masculino";
+		}
+		else if(GENDER == 1){
+			return "Femenino";
+		} else {
+			return "Otro";
+		}
+	};
 		
     return(
         <div className='acceso'>
@@ -61,7 +68,7 @@ function Access() {
 											<span className='bd'>{item.ECONOMIC_ACTIVITY}</span>
 											<span className='bd'>{item.CURP}</span>
 											<span className='bd'>{item.RFC}</span>
-											<span className='bd'>{item.GENDER === 1 ? femenino : masculino}</span>
+											<span className='bd'>{calc(item.GENDER) }</span>
 											<span className='bd'>{item.PHONE}</span>
 											<span className='bd'>{item.EMAIL}</span>
 										</div>

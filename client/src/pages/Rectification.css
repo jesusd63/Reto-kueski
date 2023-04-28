@@ -1,0 +1,28 @@
+label{
+    display: block;
+    line-height: 6vh;
+}
+
+input{
+    border-radius: 8px;
+    font-family: inherit;
+    width: 80%;
+}
+
+.data-rect{
+    margin-top: 20px;
+    left: 100px;
+    width: 15%;
+    height: 1093px;
+    background-color: aqua;
+    position: absolute;
+    box-sizing: border-box;
+    }
+.btn-save{
+    background-color: #3600ea;
+    color: white;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 8px;
+    display: block;
+}

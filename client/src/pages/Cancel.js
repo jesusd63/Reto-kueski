@@ -5,7 +5,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 export default function Cancel(props) {
   return (
     <div className="cancel">
-      <span className="head">Cancelación - Rafael Nicolas Belloni Rocha</span>
+      <span className="head">Cancelación: </span>
       <div>
         <AiFillCloseCircle onClick={props.onClose} className="close" />
       </div>

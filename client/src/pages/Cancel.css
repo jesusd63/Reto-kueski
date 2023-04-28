@@ -19,7 +19,7 @@
 }
 
 .cancel .head {
-  left: 155px;
+  left: 17%;
   top: 30px;
   display: flex;
   align-items: center;
@@ -35,9 +35,9 @@
 }
 .cancel .info {
   position: absolute;
-  left: 155px;
+  left: 17%;
   top: 85px;
-  width: 530px;
+  width: 515px;
   height: 120px;
   display: flex;
   color: rgba(0, 0, 0, 1);
@@ -51,7 +51,7 @@
 }
 .cancel .razon {
   position: absolute;
-  left: 176px;
+  left: 17%;
   top: 190px;
   width: 150px;
   height: 40px;
@@ -68,7 +68,7 @@
 }
 .cancel .input {
   position: absolute;
-  left: 170px;
+  left: 17%;
   top: 225px;
   width: 505px;
   height: 316px;
@@ -95,7 +95,7 @@
 
 .cancel .Cambios .cancel-btn {
   position: absolute;
-  right: 32%;
+  right: 45%;
   top: 5%;
   width: 70%;
   height: 100%;
