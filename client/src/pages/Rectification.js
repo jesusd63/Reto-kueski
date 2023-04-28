@@ -1,9 +1,135 @@
+// import axios from "axios";
+// import React, { useState } from "react";
+// import { Link, useLocation, useNavigate } from "react-router-dom";
+// import { useParams } from "react-router-dom";
+// import "./Rectification.css"
+
+// function Rectification(){
+//     const [user, setUser] = useState({
+//         title: "",
+//         desc: "",
+//         price: null,
+//         cover: "",
+//       });
+    
+//       const [error,setError] = useState(false)
+
+//       const location = useLocation();
+//       const navigate = useNavigate();
+
+//       const routeParams = useParams();
+
+//       const id = routeParams.id;
+
+//       const handleChange = (e) => {
+//         setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+//       };
+    
+//       const handleClick = async (e) => {
+//         e.preventDefault();
+    
+//         try {
+//           await axios.put(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect/${id}`, user);
+//           navigate("/");
+//         } catch (err) {
+//           console.log(err);
+//           setError(true);
+//         }
+//       };
+
+//       return (
+//         <div>
+//             <div className="form">
+//             <h1>Update the User</h1>
+//             <input
+//                 type="text"
+//                 placeholder="Name"
+//                 name="USER_NAME"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="Last Name"
+//                 name="USER_LAST_NAME"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="Second Last Name"
+//                 name="USER_SEC_LAST_NAME"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="BIRTH"
+//                 name="BIRTH"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="NATIONALITY"
+//                 name="NATIONALITY"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="STATE"
+//                 name="STATE"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="ECONOMIC ACTIVITY"
+//                 name="ECONOMIC_ACTIVITY"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="CURP"
+//                 name="CURP"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="RFC"
+//                 name="RFC"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="GENDER"
+//                 name="GENDER"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="PHONE"
+//                 name="PHONE"
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="text"
+//                 placeholder="EMAIL"
+//                 name="EMAIL"
+//                 onChange={handleChange}
+//             />
+//             </div>
+//             <button onClick={handleClick}>Update</button>
+//             {error && "Something went wrong!"}
+//             <Link to="/">Home</Link>
+//         </div>
+//       );
+// }
+
+// export default Rectification;
+
 import { useParams } from "react-router-dom";
-import "./Rectification.css";
+import "./Access2.css"
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from 'react';
 
 function UserForm() {
+
     const routeParams = useParams();
 
     const id = routeParams.id;
@@ -31,7 +157,7 @@ function UserForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect/${id}/${formData.USER_NAME}/${formData.USER_LAST_NAME}/${formData.USER_SEC_LAST_NAME}/${formData.BIRTH.slice(0,10)}/${formData.NATIONALITY}/${formData.STATE}/${formData.GENDER}/${formData.PHONE}/${formData.EMAIL}`);
+      const response = await axios.get(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect/${id}/${formData.USER_NAME}/${formData.USER_LAST_NAME}/${formData.USER_SEC_LAST_NAME}/${formData.BIRTH.slice(0,10)}/${formData.NATIONALITY}/${formData.STATE}/${formData.GENDER}/${formData.PHONE}/${formData.EMAIL}/${formData.RFC}/${formData.CURP}/${formData.ECONOMIC_ACTIVITY}`);
       setUserData(response.data);
       console.log(response);
     } catch (error) {
@@ -45,148 +171,125 @@ function UserForm() {
       .then((data) => {
         // Aquí establecemos los datos obtenidos en el estado userData
         setUserData(data[0]);
+        setFormData({
+            USER_NAME: data[0].USER_NAME ,
+            USER_LAST_NAME: data[0].USER_LAST_NAME,
+            USER_SEC_LAST_NAME: data[0].USER_SEC_LAST_NAME,
+            BIRTH: data[0].BIRTH,
+            NATIONALITY: data[0].NATIONALITY,
+            STATE: data[0].STATE,
+            ECONOMIC_ACTIVITY: data[0].ECONOMIC_ACTIVITY,
+            CURP: data[0].CURP,
+            RFC: data[0].RFC,
+            GENDER: data[0].GENDER,
+            PHONE: data[0].PHONE,
+            EMAIL: data[0].EMAIL,
+          });
       })
       .catch((error) => console.error(error));
-  }, );
+  }, [id]);
 
-  useEffect(() => {
-    // Aquí establecemos los valores iniciales del formulario con los datos del usuario
-    setFormData({
-      USER_NAME: userData.USER_NAME || "",
-      USER_LAST_NAME: userData.USER_LAST_NAME || "",
-      USER_SEC_LAST_NAME: userData.USER_SEC_LAST_NAME || "",
-      BIRTH: userData.BIRTH || "",
-      NATIONALITY: userData.NATIONALITY || "",
-      STATE: userData.STATE || "",
-      ECONOMIC_ACTIVITY: userData.ECONOMIC_ACTIVITY || "",
-      CURP: userData.CURP || "",
-      RFC: userData.RFC || "",
-      GENDER: userData.GENDER || "",
-      PHONE: userData.PHONE || "",
-      EMAIL: userData.EMAIL || "",
-    });
-  }, [userData]);
 
-  //asdads
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="data-rect">
-        <label htmlFor="USER_NAME">Nombre:</label>
-        <input
-          type="text"
-          id="USER_NAME"
-          name="USER_NAME"
-          defaultValue={formData.USER_NAME}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="USER_LAST_NAME">Apellido Paterno:</label>
-        <input
-          type="text"
-          id="USER_LAST_NAME"
-          name="USER_LAST_NAME"
-          defaultValue={formData.USER_LAST_NAME}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="USER_SEC_LAST_NAME">Apellido Materno:</label>
-        <input
-          type="text"
-          id="USER_SEC_LAST_NAME"
-          name="USER_SEC_LAST_NAME"
-          defaultValue={formData.USER_SEC_LAST_NAME}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="BIRTH">Fecha de Nacimiento:</label>
-        <input
-          type="date"
-          id="BIRTH"
-          name="BIRTH"
-          defaultValue={formData.BIRTH ? formData.BIRTH.slice(0, 10) : null}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="NATIONALITY">Nacionalidad:</label>
-        <input
-          type="text"
-          id="NATIONALITY"
-          name="NATIONALITY"
-          defaultValue={formData.NATIONALITY}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="STATE">Estado:</label>
-        <input
-          type="text"
-          id="STATE"
-          name="STATE"
-          defaultValue={formData.STATE}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="ECONOMIC_ACTIVITY">Actividad Economica:</label>
-        <input
-          type="text"
-          id="ECONOMIC_ACTIVITY"
-          name="ECONOMIC_ACTIVITY"
-          defaultValue={formData.ECONOMIC_ACTIVITY}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="CURP">CURP:</label>
-        <input
-          type="text"
-          id="CURP"
-          name="CURP"
-          defaultValue={formData.CURP}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="RFC">RFC:</label>
-        <input
-          type="text"
-          id="RFC"
-          name="RFC"
-          defaultValue={formData.RFC}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="GENDER">Genero:</label>
-        <input
-          type="number"
-          id="GENDER"
-          name="GENDER"
-          defaultValue={formData.GENDER}
-          onChange={handleChange}
-          min={0}
-          max={2}
-          required
-        />
-        <label htmlFor="PHONE">Telefono:</label>
-        <input
-          type="number"
-          id="PHONE"
-          name="PHONE"
-          defaultValue={formData.PHONE}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="EMAIL">EMAIL:</label>
-        <input
-          type="email"
-          id="EMAIL"
-          name="EMAIL"
-          defaultValue={formData.EMAIL}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <button className="btn-save" type="submit" onSubmit={handleSubmit}>
-        Guardar cambios
-      </button>
+      <label htmlFor="USER_NAME">Nombre:</label>
+      <input
+        type="text"
+        id="USER_NAME"
+        name="USER_NAME"
+        value={formData.USER_NAME}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_LAST_NAME">Apellido Paterno:</label>
+      <input
+        type="text"
+        id="USER_LAST_NAME"
+        name="USER_LAST_NAME"
+        value={formData.USER_LAST_NAME}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_SEC_LAST_NAME">Apellido Materno:</label>
+      <input
+        type="text"
+        id="USER_SEC_LAST_NAME"
+        name="USER_SEC_LAST_NAME"
+        value={formData.USER_SEC_LAST_NAME}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_NAME">Fecha de Nacimiento:</label>
+      <input
+        type="text"
+        id="BIRTH"
+        name="BIRTH"
+        value={formData.BIRTH ? formData.BIRTH.slice(0,10) : null}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_NAME">Nacionalidad:</label>
+      <input
+        type="text"
+        id="NATIONALITY"
+        name="NATIONALITY"
+        value={formData.NATIONALITY}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_NAME">Estado:</label>
+      <input
+        type="text"
+        id="STATE"
+        name="STATE"
+        value={formData.STATE}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_NAME">Actividad Economica:</label>
+      <input
+        type="text"
+        id="ECONOMIC_ACTIVITY"
+        name="ECONOMIC_ACTIVITY"
+        value={formData.ECONOMIC_ACTIVITY}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_NAME">CURP:</label>
+      <input
+        type="text"
+        id="CURP"
+        name="CURP"
+        value={formData.CURP}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_NAME">RFC:</label>
+      <input
+        type="text"
+        id="RFC"
+        name="RFC"
+        value={formData.RFC}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_NAME">Genero:</label>
+      <input
+        type="text"
+        id="GENDER"
+        name="GENDER"
+        value={formData.GENDER}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_NAME">Telefono:</label>
+      <input
+        type="text"
+        id="PHONE"
+        name="PHONE"
+        value={formData.PHONE}
+        onChange={handleChange}
+      />
+      <label htmlFor="USER_NAME">EMAIL:</label>
+      <input
+        type="text"
+        id="EMAIL"
+        name="EMAIL"
+        value={formData.EMAIL}
+        onChange={handleChange}
+      />
+      <button type="submit" onSubmit={handleSubmit}>Guardar</button>
     </form>
   );
 }
