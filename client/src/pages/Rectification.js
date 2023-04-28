@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import "./Access2.css"
+import "./Rectification.css"
 import axios from "axios";
 import React, {useState, useEffect} from 'react';
 
@@ -64,10 +64,9 @@ function UserForm() {
       .catch((error) => console.error(error));
   }, [id]);
 
-
-
   return (
     <form onSubmit={handleSubmit}>
+      <div className="data-rect">
       <label htmlFor="USER_NAME">Nombre:</label>
       <input
         type="text"
@@ -92,15 +91,15 @@ function UserForm() {
         value={formData.USER_SEC_LAST_NAME}
         onChange={handleChange}
       />
-      <label htmlFor="USER_NAME">Fecha de Nacimiento:</label>
+      <label htmlFor="BIRTH">Fecha de Nacimiento:</label>
       <input
-        type="text"
+        type="date"
         id="BIRTH"
         name="BIRTH"
         value={formData.BIRTH ? formData.BIRTH.slice(0,10) : null}
         onChange={handleChange}
       />
-      <label htmlFor="USER_NAME">Nacionalidad:</label>
+      <label htmlFor="NACIONALITY">Nacionalidad:</label>
       <input
         type="text"
         id="NATIONALITY"
@@ -108,7 +107,7 @@ function UserForm() {
         value={formData.NATIONALITY}
         onChange={handleChange}
       />
-      <label htmlFor="USER_NAME">Estado:</label>
+      <label htmlFor="STATE">Estado:</label>
       <input
         type="text"
         id="STATE"
@@ -116,7 +115,7 @@ function UserForm() {
         value={formData.STATE}
         onChange={handleChange}
       />
-      <label htmlFor="USER_NAME">Actividad Economica:</label>
+      <label htmlFor="ECONOMIC_ACTIVITY">Actividad Economica:</label>
       <input
         type="text"
         id="ECONOMIC_ACTIVITY"
@@ -124,7 +123,7 @@ function UserForm() {
         value={formData.ECONOMIC_ACTIVITY}
         onChange={handleChange}
       />
-      <label htmlFor="USER_NAME">CURP:</label>
+      <label htmlFor="CURP">CURP:</label>
       <input
         type="text"
         id="CURP"
@@ -132,7 +131,7 @@ function UserForm() {
         value={formData.CURP}
         onChange={handleChange}
       />
-      <label htmlFor="USER_NAME">RFC:</label>
+      <label htmlFor="RFC">RFC:</label>
       <input
         type="text"
         id="RFC"
@@ -140,23 +139,25 @@ function UserForm() {
         value={formData.RFC}
         onChange={handleChange}
       />
-      <label htmlFor="USER_NAME">Genero:</label>
+      <label htmlFor="GENDER">Genero:</label>
       <input
-        type="text"
+        type="number"
         id="GENDER"
         name="GENDER"
         value={formData.GENDER}
         onChange={handleChange}
+        min={0}
+        max={2}
       />
-      <label htmlFor="USER_NAME">Telefono:</label>
+      <label htmlFor="PHONE">Telefono:</label>
       <input
-        type="text"
+        type="number"
         id="PHONE"
         name="PHONE"
         value={formData.PHONE}
         onChange={handleChange}
       />
-      <label htmlFor="USER_NAME">EMAIL:</label>
+      <label htmlFor="EMAIL">EMAIL:</label>
       <input
         type="text"
         id="EMAIL"
@@ -164,7 +165,10 @@ function UserForm() {
         value={formData.EMAIL}
         onChange={handleChange}
       />
-      <button type="submit" onSubmit={handleSubmit}>Guardar</button>
+
+      <button className="btn-save" type="submit" onSubmit={handleSubmit}>Guardar cambios</button>
+
+      </div>
     </form>
   );
 }

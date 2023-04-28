@@ -1,12 +1,14 @@
 label{
     display: block;
     line-height: 6vh;
+    font-weight: 600;
 }
 
 input{
     border-radius: 8px;
     font-family: inherit;
     width: 80%;
+    height: 2%;
 }
 
 .data-rect{
@@ -25,4 +27,7 @@ input{
     font-family: inherit;
     border-radius: 8px;
     display: block;
+    cursor: pointer;
+    margin-top: 5%;
+    border: none;
 }
