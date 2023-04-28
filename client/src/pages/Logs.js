@@ -1,11 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import "./Home.css";
 import axios from "axios";
-<<<<<<< HEAD
-import { AiFillHome} from "react-icons/ai";
-=======
 import { AiFillHome } from "react-icons/ai";
->>>>>>> refs/remotes/origin/main
 import {Link} from "react-router-dom";
 
 

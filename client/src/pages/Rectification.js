@@ -4,9 +4,9 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 function UserForm() {
-  const routeParams = useParams();
+    const routeParams = useParams();
 
-  const id = routeParams.id;
+    const id = routeParams.id;
 
   const [userData, setUserData] = useState({});
   const [formData, setFormData] = useState({
@@ -31,33 +31,23 @@ function UserForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(
-        `https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect/${id}/${
-          formData.USER_NAME
-        }/${formData.USER_LAST_NAME}/${
-          formData.USER_SEC_LAST_NAME
-        }/${formData.BIRTH.slice(0, 10)}/${formData.NATIONALITY}/${
-          formData.STATE
-        }/${formData.GENDER}/${formData.PHONE}/${formData.EMAIL}`
-      );
+      const response = await axios.get(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect/${id}/${formData.USER_NAME}/${formData.USER_LAST_NAME}/${formData.USER_SEC_LAST_NAME}/${formData.BIRTH.slice(0,10)}/${formData.NATIONALITY}/${formData.STATE}/${formData.GENDER}/${formData.PHONE}/${formData.EMAIL}`);
       setUserData(response.data);
       console.log(response);
     } catch (error) {
       console.log(error);
     }
-  };
+};
 
   useEffect(() => {
-    fetch(
-      `https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/acceso/${id}`
-    )
+    fetch(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/acceso/${id}`)
       .then((response) => response.json())
       .then((data) => {
         // Aquí establecemos los datos obtenidos en el estado userData
         setUserData(data[0]);
       })
       .catch((error) => console.error(error));
-  });
+  }, );
 
   useEffect(() => {
     // Aquí establecemos los valores iniciales del formulario con los datos del usuario
@@ -77,6 +67,8 @@ function UserForm() {
     });
   }, [userData]);
 
+  //asdads
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="data-rect">
@@ -85,7 +77,7 @@ function UserForm() {
           type="text"
           id="USER_NAME"
           name="USER_NAME"
-          value={formData.USER_NAME}
+          defaultValue={formData.USER_NAME}
           onChange={handleChange}
           required
         />
@@ -94,7 +86,7 @@ function UserForm() {
           type="text"
           id="USER_LAST_NAME"
           name="USER_LAST_NAME"
-          value={formData.USER_LAST_NAME}
+          defaultValue={formData.USER_LAST_NAME}
           onChange={handleChange}
           required
         />
@@ -103,7 +95,7 @@ function UserForm() {
           type="text"
           id="USER_SEC_LAST_NAME"
           name="USER_SEC_LAST_NAME"
-          value={formData.USER_SEC_LAST_NAME}
+          defaultValue={formData.USER_SEC_LAST_NAME}
           onChange={handleChange}
           required
         />
@@ -112,7 +104,7 @@ function UserForm() {
           type="date"
           id="BIRTH"
           name="BIRTH"
-          value={formData.BIRTH ? formData.BIRTH.slice(0, 10) : null}
+          defaultValue={formData.BIRTH ? formData.BIRTH.slice(0, 10) : null}
           onChange={handleChange}
           required
         />
@@ -121,7 +113,7 @@ function UserForm() {
           type="text"
           id="NATIONALITY"
           name="NATIONALITY"
-          value={formData.NATIONALITY}
+          defaultValue={formData.NATIONALITY}
           onChange={handleChange}
           required
         />
@@ -130,7 +122,7 @@ function UserForm() {
           type="text"
           id="STATE"
           name="STATE"
-          value={formData.STATE}
+          defaultValue={formData.STATE}
           onChange={handleChange}
           required
         />
@@ -139,7 +131,7 @@ function UserForm() {
           type="text"
           id="ECONOMIC_ACTIVITY"
           name="ECONOMIC_ACTIVITY"
-          value={formData.ECONOMIC_ACTIVITY}
+          defaultValue={formData.ECONOMIC_ACTIVITY}
           onChange={handleChange}
           required
         />
@@ -148,7 +140,7 @@ function UserForm() {
           type="text"
           id="CURP"
           name="CURP"
-          value={formData.CURP}
+          defaultValue={formData.CURP}
           onChange={handleChange}
           required
         />
@@ -157,7 +149,7 @@ function UserForm() {
           type="text"
           id="RFC"
           name="RFC"
-          value={formData.RFC}
+          defaultValue={formData.RFC}
           onChange={handleChange}
           required
         />
@@ -166,7 +158,7 @@ function UserForm() {
           type="number"
           id="GENDER"
           name="GENDER"
-          value={formData.GENDER}
+          defaultValue={formData.GENDER}
           onChange={handleChange}
           min={0}
           max={2}
@@ -177,7 +169,7 @@ function UserForm() {
           type="number"
           id="PHONE"
           name="PHONE"
-          value={formData.PHONE}
+          defaultValue={formData.PHONE}
           onChange={handleChange}
           required
         />
@@ -186,7 +178,7 @@ function UserForm() {
           type="email"
           id="EMAIL"
           name="EMAIL"
-          value={formData.EMAIL}
+          defaultValue={formData.EMAIL}
           onChange={handleChange}
           required
         />
