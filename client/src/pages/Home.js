@@ -5,15 +5,29 @@ import { AiFillHome, AiOutlineMenu, AiOutlineClockCircle } from "react-icons/ai"
 import { Link } from "react-router-dom";
 import Backdrop from "../Components/Backdrop"
 import Cancel from "./Cancel";
+import Oposition from "./Oposition";
 import Popup from "reactjs-popup";
 
 const Home = () => {
 
-  const [open, setOpen] = useState(false);
-  const closeModal = () => setOpen(false);
+  const [cancelOpen, setCancelOpen] = useState(false);
 
-  function cancel_popup(){
-    setOpen(true);
+  function openCancelPopup(){
+    setCancelOpen(true);
+  }
+
+  function closeCancelPopup(){
+    setCancelOpen(false);
+  }
+
+  const [opoOpen, setOpoOpen] = useState(false);
+
+  function openOpoPopup(){
+    setOpoOpen(true);
+  }
+
+  function closeOpoPopup(){
+  setOpoOpen(false);
   }
 
   const [CancelIsOpen, setCancelIsOpen] = useState(false);
@@ -104,14 +118,19 @@ const Home = () => {
                         <Link style={{ textDecoration: "none" }} to={`/action/rect/${item.USER_ID}`}>
                           <button className="btn">Rectificación</button>
                         </Link>
-                        <button type="button" className="btn" onClick={cancel_popup} >Cancelación</button>
-                        <Popup open={open} lockScroll={true} nested>
-                          <Cancel onClose={closeModal} />
-                          <Backdrop onClose={closeModal}/>
+
+                        <button type="button" className="btn" onClick={openCancelPopup}>Cancelación</button>
+                        <Popup open={cancelOpen} lockScroll={true} nested >
+                        <Cancel onClose={closeCancelPopup}/>
+                        <Backdrop onClose={closeCancelPopup}/>
                         </Popup>
-                        <Link style={{ textDecoration: "none" }} to={`/action/op/${item.USER_ID}`}>
-                          <button className="btn"> Oposición </button>
-                        </Link>
+
+                        <button type="button" className="btn" onClick={openOpoPopup}>Oposición</button>
+                        <Popup open={opoOpen} lockScroll={true} nested>
+                        <Oposition onClose={closeOpoPopup}/>
+                        <Backdrop onClose={closeOpoPopup}/>
+                        </Popup>
+
                       </div>
                     </div>
                   </td>

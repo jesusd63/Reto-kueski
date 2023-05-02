@@ -1,0 +1,114 @@
+.close {
+    height: 30px;
+    width: 30px;
+    margin-left: 93%;
+    margin-top: 3%;
+    cursor: pointer;
+  }
+  
+  .opo {
+    position: relative;
+    left: 0px;
+    top: 25px;
+    margin: auto;
+    width: 50vw;
+    height: 70vh;
+    overflow: auto;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10;
+  }
+  
+  .opo .head {
+    left: 17%;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 1);
+    font-family: inherit;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 72px;
+    width: 510px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .opo .info {
+    position: absolute;
+    left: 17%;
+    top: 85px;
+    width: 515px;
+    height: 120px;
+    display: flex;
+    color: rgba(0, 0, 0, 1);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .opo .razon {
+    position: absolute;
+    left: 17%;
+    top: 190px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+  
+    color: rgba(0, 0, 0, 1);
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 39px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .opo .input {
+    position: absolute;
+    left: 17%;
+    top: 225px;
+    width: 505px;
+    height: 316px;
+    border-radius: 20px;
+  }
+  .opo .input .Rectangle29 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 505px;
+    height: 220px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    box-sizing: border-box;
+  }
+  
+  .opo .Cambios {
+    position: absolute;
+    left: 480px;
+    top: 470px;
+    width: 290px;
+    height: 50px;
+  }
+  
+  .opo .Cambios .cancel-btn {
+    position: absolute;
+    right: 45%;
+    top: 5%;
+    width: 70%;
+    height: 100%;
+    background: rgba(54, 0, 234);
+    color: rgba(245, 246, 251);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
