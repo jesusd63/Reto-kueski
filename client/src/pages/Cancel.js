@@ -11,7 +11,7 @@ export default function Cancel(props) {
       </div>
       <span className="info">
         Por este medio y según los alineamientos de los derechos ARCO con los
-        que cuenta, el usuario Rafael Nicolas Belloni Rocha solicita la
+        que cuenta, el usuario solicita la
         cancelación en el uso de sus datos personales.
       </span>
       <span className="razon">Razón del Usuario:</span>
