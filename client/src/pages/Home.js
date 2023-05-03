@@ -8,27 +8,45 @@ import Cancel from "./Cancel";
 import Oposition from "./Oposition";
 import Popup from "reactjs-popup";
 
-const Home = () => {
+function Home(props) {
 
-  const [cancelOpen, setCancelOpen] = useState(false);
+  //const [cancelOpen, setCancelOpen] = useState(false);
+  const [oposicionOpen, setOposicionOpen] = useState({
+    USER_ID: 0,
+    OPEN: false,
+  });
+  
+  const [cancelOpen, setCancelOpen] = useState({
+    USER_ID: 0,
+    OPEN: false,
+  });
 
-  function openCancelPopup(){
-    setCancelOpen(true);
-  }
+  const openCancelPopup = (userId) => {
+    setCancelOpen({
+      USER_ID: userId,
+      OPEN: true,
+    })
+    console.log(userId);
+  };
 
-  function closeCancelPopup(){
-    setCancelOpen(false);
-  }
+  const openOposicionPopup = (userId) => {
+    setOposicionOpen({
+      USER_ID: userId,
+      OPEN: true
+    })
+  };
 
-  const [opoOpen, setOpoOpen] = useState(false);
+  const closeCancelPopup = () => {
+    setCancelOpen({
+      OPEN: false,
+    });
+  };
 
-  function openOpoPopup(){
-    setOpoOpen(true);
-  }
-
-  function closeOpoPopup(){
-  setOpoOpen(false);
-  }
+  const closeOposicionPopup = () => {
+    setOposicionOpen({
+      OPEN:false,
+    });
+  };
 
   const [CancelIsOpen, setCancelIsOpen] = useState(false);
 
@@ -112,23 +130,23 @@ const Home = () => {
                     <div className="dropdown">
                       <AiOutlineMenu className="dropbtn"></AiOutlineMenu>
                       <div className="dropdown-content">
+
                         <Link style={{ textDecoration: "none" }} to={`/action/acceso/${item.USER_ID}`}>
                           <button className="btn"> Acceso </button>
                         </Link>
+
                         <Link style={{ textDecoration: "none" }} to={`/action/rect/${item.USER_ID}`}>
                           <button className="btn">Rectificación</button>
                         </Link>
 
-                        <button type="button" className="btn" onClick={openCancelPopup}>Cancelación</button>
-                        <Popup open={cancelOpen} lockScroll={true} nested >
-                        <Cancel onClose={closeCancelPopup}/>
-                        <Backdrop onClose={closeCancelPopup}/>
+                        <button type="button" className="btn" onClick={() => openCancelPopup(item.USER_ID)}>Cancelación</button>
+                        <Popup open={cancelOpen.OPEN} lockScroll={true} nested>
+                          <Cancel onClose={closeCancelPopup} userId={cancelOpen.USER_ID}/>
                         </Popup>
 
-                        <button type="button" className="btn" onClick={openOpoPopup}>Oposición</button>
-                        <Popup open={opoOpen} lockScroll={true} nested>
-                        <Oposition onClose={closeOpoPopup}/>
-                        <Backdrop onClose={closeOpoPopup}/>
+                        <button type="button" className="btn" onClick={() => openOposicionPopup(item.USER_ID)}>Oposición</button>
+                        <Popup open={oposicionOpen.OPEN} lockScroll={true} nested>
+                          <Oposition onClose={closeOposicionPopup}  userId={oposicionOpen.USER_ID}/>
                         </Popup>
 
                       </div>

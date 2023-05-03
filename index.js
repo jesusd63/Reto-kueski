@@ -58,32 +58,43 @@ app.get("/action/acceso/:user", (req, res) => {
   });
 });
 
-app.get("/action/op/:user", (req, res) => {
+app.post("/action/op/:user/:comment", (req, res) => {
   const userid=req.params.user;
-  const sqlGet = "UPDATE users SET IS_BLOCKED = 1 WHERE USER_ID=?";
-  db.query(sqlGet, [userid], (err, result) => {
+  const com= req.params.comment;
+  const sqlUp = "UPDATE users SET IS_BLOCKED = 1 WHERE USER_ID="+userid+";";
+  //const sqlUp2 = "insert into kueski_data.arco (USER_ID, ACTION_TYPE, ARCO_DATE, arco.COMMENT) values ("+userid+", 'O', current_date(),'"+com+"');";
+  //db.query(sqlUp2, [userid], (err, result) => {
+  //  res.send(result);
+  //});
+
+  db.query(sqlUp, [userid], (err, result) => {
       res.send(result);
 
   });
 });
 
-app.get("/action/cancel/:user", (req, res) => {
+app.post("/action/cancel/:user/:comment", (req, res) => {
   const userid=req.params.user;
-  const sqlGet = "UPDATE users SET USER_NAME = NULL, USER_LAST_NAME=NULL, USER_SEC_LAST_NAME=NULL, BIRTH=NULL, NATIONALITY=NULL, STATE=NULL, RFC=NULL, GENDER=NULL, EMAIL=NULL, INFO_JSON=NULL, IS_CLIENT=NULL, DELETED_AT=current_date()  WHERE USER_ID=?;";
-  const sqlDel= "DELETE FROM addresses WHERE USER_ID=?;"
-  const sqlDel2= "DELETE FROM identifications WHERE USER_ID=?;"
+  const comment=req.params.comment;
+  const sqlGet = "UPDATE users SET USER_NAME = NULL, USER_LAST_NAME=NULL, USER_SEC_LAST_NAME=NULL, BIRTH=NULL, NATIONALITY=NULL, STATE=NULL, RFC=NULL, GENDER=NULL, EMAIL=NULL, INFO_JSON=NULL, IS_CLIENT=NULL, DELETED_AT=current_date()  WHERE USER_ID="+userid+";";
+  const sqlDel= "DELETE FROM addresses WHERE USER_ID="+userid+";";
+  const sqlDel2= "DELETE FROM identifications WHERE USER_ID="+userid+";";
+
+
+  //const sqlDel3 = "insert into kueski_data.arco (USER_ID, ACTION_TYPE, ARCO_DATE,arco.COMMENT) values ("+userid+", 'C', current_date(),'"+comment+"');";
+  //db.query(sqlDel3, [userid,comment], (err, result) => {
+  //  res.send(result);
+  //});
+
   db.query(sqlGet, [userid], (err, result) => {
       res.send(result);
-
   });
   db.query(sqlDel, [userid], (err, result) => {
     res.send(result);
-
-});
+  });
 db.query(sqlDel2, [userid], (err, result) => {
   res.send(result);
-
-});
+  });
 });
 
 app.get("/", (req, res) => {

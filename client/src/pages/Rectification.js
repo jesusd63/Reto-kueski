@@ -32,7 +32,22 @@ function UserForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect/${id}/${formData.USER_NAME}/${formData.USER_LAST_NAME}/${formData.USER_SEC_LAST_NAME}/${formData.BIRTH.slice(0,10)}/${formData.NATIONALITY}/${formData.STATE}/${formData.GENDER}/${formData.PHONE}/${formData.EMAIL}/${formData.RFC}/${formData.CURP}/${formData.ECONOMIC_ACTIVITY}`);
+      const body = {
+        "user": id,
+        "nom": formData.USER_NAME,
+        "lname": formData.USER_LAST_NAME,
+        "slname":formData.USER_SEC_LAST_NAME,
+        "birth": formData.BIRTH,
+        "nac": formData.NATIONALITY,
+        "est": formData.STATE,
+        "gen":formData.GENDER,
+        "num":formData.PHONE,
+        "email":formData.EMAIL,
+        "rfc":formData.RFC,
+        "curp":formData.CURP,
+        "ae":formData.ECONOMIC_ACTIVITY
+    }
+      const response = await axios.patch(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect`, body);
       setUserData(response.data);
       console.log(response);
     } catch (error) {
@@ -116,7 +131,7 @@ function UserForm() {
         onChange={handleChange}
       />
       <label htmlFor="ECONOMIC_ACTIVITY">Actividad Economica:</label>
-      <input
+      <ifz
         type="text"
         id="ECONOMIC_ACTIVITY"
         name="ECONOMIC_ACTIVITY"

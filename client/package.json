@@ -17,7 +17,7 @@
     "start": "^5.1.0",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
