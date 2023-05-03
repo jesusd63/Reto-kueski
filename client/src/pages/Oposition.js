@@ -16,7 +16,7 @@ export default function Oposition(props) {
       </span>
       <span className="razon">Razón del Usuario:</span>
       <div className="input">
-        <div className="Rectangle29" />
+        <textarea className="Rectangle29" />
       </div>
       <div className="Cambios">
         <button className="cancel-btn">Realizar Oposición</button>
