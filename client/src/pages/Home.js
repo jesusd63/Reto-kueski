@@ -118,7 +118,7 @@ function Home(props) {
               <Form.Control
                 className="search"
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Buscar"
+                placeholder="Buscar por apellido, CURP o RFC"
               />
             </InputGroup>
           </Form>
@@ -176,11 +176,13 @@ function Home(props) {
                         <button type="button" className="btn" onClick={() => openCancelPopup(item.USER_ID, item.USER_NAME, item.USER_LAST_NAME, item.USER_SEC_LAST_NAME)}>Cancelación</button>
                         <Popup open={cancelOpen.OPEN} lockScroll={true} nested>
                           <Cancel onClose={closeCancelPopup} userId={cancelOpen.USER_ID} userName={cancelOpen.USER_NAME} userLastName={cancelOpen.USER_LAST_NAME} userSecLastName={cancelOpen.USER_SEC_LAST_NAME}/>
+                          <Backdrop onClose={closeCancelPopup}></Backdrop>
                         </Popup>
 
                         <button type="button" className="btn" onClick={() => openOposicionPopup(item.USER_ID, item.USER_NAME, item.USER_LAST_NAME, item.USER_SEC_LAST_NAME)}>Oposición</button>
                         <Popup open={oposicionOpen.OPEN} lockScroll={true} nested>
                           <Oposition onClose={closeOposicionPopup}  userId={oposicionOpen.USER_ID} userName={oposicionOpen.USER_NAME} userLastName={oposicionOpen.USER_LAST_NAME} userSecLastName={oposicionOpen.USER_SEC_LAST_NAME}/>
+                          <Backdrop onClose={closeOposicionPopup}></Backdrop>
                         </Popup>
 
                       </div>

@@ -72,6 +72,8 @@
   width: 505px;
   height: 316px;
   border-radius: 20px;
+  resize: none;
+  padding-left: 10px;
 }
 .cancel .input .Rectangle29 {
   position: absolute;
@@ -82,6 +84,8 @@
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 1);
   box-sizing: border-box;
+  resize: none;
+  padding: 10px;
 }
 
 .cancel .Cambios {
