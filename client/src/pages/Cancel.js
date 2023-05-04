@@ -6,6 +6,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function Cancel(props) {
   const userId = props.userId;
+  const userName = props.userName;
+  const userLastName = props.userLastName;
+  const userSecLastName = props.userSecLastName;
 
   const [comment, setComment] = useState("");
 
@@ -35,13 +38,13 @@ export default function Cancel(props) {
   };
   return (
     <div className="cancel">
-      <span className="head">Cancelación: {props.userId}</span>
+      <span className="head">Cancelación</span>
       <div>
         <AiFillCloseCircle onClick={props.onClose} className="close" />
       </div>
       <span className="info">
         Por este medio y según los alineamientos de los derechos ARCO con los
-        que cuenta, el usuario solicita la
+        que cuenta, el usuario {userName} {userLastName} {userSecLastName} solicita la
         cancelación en el uso de sus datos personales.
       </span>
       <span className="razon">Razón del Usuario:</span>

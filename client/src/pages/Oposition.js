@@ -6,6 +6,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function Oposition(props) {
   const userId = props.userId;
+  const userName = props.userName;
+  const userLastName = props.userLastName;
+  const userSecLastName = props.userSecLastName;
 
   const [comment, setComment] = useState("");
 
@@ -36,13 +39,13 @@ export default function Oposition(props) {
 
   return (
     <div className="opo">
-      <span className="head">Oposición: {userId}</span>
+      <span className="head">Oposición</span>
       <div>
         <AiFillCloseCircle onClick={props.onClose} className="close" />
       </div>
       <span className="info">
         Por este medio y según los alineamientos de los derechos ARCO con los
-        que cuenta, el usuario solicita la oposición de sus datos personales.
+        que cuenta, el usuario {userName} {userLastName} {userSecLastName} solicita la oposición de sus datos personales.
       </span>
       <span className="razon">Razón del Usuario:</span>
       <div className="input">

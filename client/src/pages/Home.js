@@ -15,25 +15,37 @@ function Home(props) {
   const [search, setSearch] = useState("");
   const [oposicionOpen, setOposicionOpen] = useState({
     USER_ID: 0,
+    USER_NAME: "",
+    USER_LAST_NAME: "",
+    USER_SEC_LAST_NAME: "",
     OPEN: false,
   });
   
   const [cancelOpen, setCancelOpen] = useState({
     USER_ID: 0,
+    USER_NAME: "",
+    USER_LAST_NAME: "",
+    USER_SEC_LAST_NAME: "",
     OPEN: false,
   });
 
-  const openCancelPopup = (userId) => {
+  const openCancelPopup = (userId, userName, userLastName, userSecLastName) => {
     setCancelOpen({
       USER_ID: userId,
+      USER_NAME: userName,
+      USER_LAST_NAME: userLastName,
+      USER_SEC_LAST_NAME: userSecLastName,
       OPEN: true,
     })
   };
 
-  const openOposicionPopup = (userId) => {
+  const openOposicionPopup = (userId, userName, userLastName, userSecLastName) => {
     setOposicionOpen({
       USER_ID: userId,
-      OPEN: true
+      USER_NAME: userName,
+      USER_LAST_NAME: userLastName,
+      USER_SEC_LAST_NAME: userSecLastName,
+      OPEN: true,
     })
   };
 
@@ -161,14 +173,14 @@ function Home(props) {
                           <button className="btn">Rectificación</button>
                         </Link>
 
-                        <button type="button" className="btn" onClick={() => openCancelPopup(item.USER_ID)}>Cancelación</button>
+                        <button type="button" className="btn" onClick={() => openCancelPopup(item.USER_ID, item.USER_NAME, item.USER_LAST_NAME, item.USER_SEC_LAST_NAME)}>Cancelación</button>
                         <Popup open={cancelOpen.OPEN} lockScroll={true} nested>
-                          <Cancel onClose={closeCancelPopup} userId={cancelOpen.USER_ID}/>
+                          <Cancel onClose={closeCancelPopup} userId={cancelOpen.USER_ID} userName={cancelOpen.USER_NAME} userLastName={cancelOpen.USER_LAST_NAME} userSecLastName={cancelOpen.USER_SEC_LAST_NAME}/>
                         </Popup>
 
-                        <button type="button" className="btn" onClick={() => openOposicionPopup(item.USER_ID)}>Oposición</button>
+                        <button type="button" className="btn" onClick={() => openOposicionPopup(item.USER_ID, item.USER_NAME, item.USER_LAST_NAME, item.USER_SEC_LAST_NAME)}>Oposición</button>
                         <Popup open={oposicionOpen.OPEN} lockScroll={true} nested>
-                          <Oposition onClose={closeOposicionPopup}  userId={oposicionOpen.USER_ID}/>
+                          <Oposition onClose={closeOposicionPopup}  userId={oposicionOpen.USER_ID} userName={oposicionOpen.USER_NAME} userLastName={oposicionOpen.USER_LAST_NAME} userSecLastName={oposicionOpen.USER_SEC_LAST_NAME}/>
                         </Popup>
 
                       </div>
