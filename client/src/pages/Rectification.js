@@ -83,7 +83,7 @@ function UserForm() {
   };
 
   useEffect(() => {
-    fetch(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/acceso/${id}`)
+    fetch(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/menu/rect/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setFormData({

@@ -26,15 +26,17 @@ function Home(props) {
     USER_NAME: "",
     USER_LAST_NAME: "",
     USER_SEC_LAST_NAME: "",
+    USER_IS_CLIENT: false,
     OPEN: false,
   });
 
-  const openCancelPopup = (userId, userName, userLastName, userSecLastName) => {
+  const openCancelPopup = (userId, userName, userLastName, userSecLastName, userIsClient) => {
     setCancelOpen({
       USER_ID: userId,
       USER_NAME: userName,
       USER_LAST_NAME: userLastName,
       USER_SEC_LAST_NAME: userSecLastName,
+      USER_IS_CLIENT: userIsClient,
       OPEN: true,
     })
   };
@@ -173,7 +175,7 @@ function Home(props) {
                           <button className="btn">Rectificación</button>
                         </Link>
 
-                        <button type="button" className="btn" onClick={() => openCancelPopup(item.USER_ID, item.USER_NAME, item.USER_LAST_NAME, item.USER_SEC_LAST_NAME)}>Cancelación</button>
+                        <button type="button" className="btn" onClick={() => openCancelPopup(item.USER_ID, item.USER_NAME, item.USER_LAST_NAME, item.USER_SEC_LAST_NAME, item.IS_CLIENT)}>Cancelación</button>
                         <Popup open={cancelOpen.OPEN} lockScroll={true} nested>
                           <Cancel onClose={closeCancelPopup} userId={cancelOpen.USER_ID} userName={cancelOpen.USER_NAME} userLastName={cancelOpen.USER_LAST_NAME} userSecLastName={cancelOpen.USER_SEC_LAST_NAME}/>
                           <Backdrop onClose={closeCancelPopup}></Backdrop>

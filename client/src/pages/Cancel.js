@@ -34,7 +34,12 @@ export default function Cancel(props) {
   const handleRealizarCancelacion = () => {
     props.onClose();
     handleSubmit();
-    toast.success("Se realizó la cancelación con éxito");
+    if(props.USER_IS_CLIENT){
+      toast.success("Se realizó la cancelación con éxito");
+    }
+    else{
+      toast.error("El usuario es un cliente");
+    }
   };
   return (
     <div className="cancel">
