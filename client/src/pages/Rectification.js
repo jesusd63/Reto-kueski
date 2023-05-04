@@ -72,7 +72,7 @@ function UserForm() {
         "ext": Number(formData.EXT_NUM),
     }
       console.log(address_information);
-      //await axios.patch(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect`, user_information);
+      await axios.patch(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect`, user_information);
       await axios.patch(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rectAddress`, address_information);
       toast.success('Cambios guardados');
     } catch (error) {
