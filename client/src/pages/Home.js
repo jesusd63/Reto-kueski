@@ -7,10 +7,12 @@ import Backdrop from "../Components/Backdrop"
 import Cancel from "./Cancel";
 import Oposition from "./Oposition";
 import Popup from "reactjs-popup";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 function Home(props) {
 
-  //const [cancelOpen, setCancelOpen] = useState(false);
+  const [search, setSearch] = useState("");
   const [oposicionOpen, setOposicionOpen] = useState({
     USER_ID: 0,
     OPEN: false,
@@ -98,8 +100,19 @@ function Home(props) {
           </div>
         </div>
       </div>
+        <div className="nav-top">
+          <h1 className="table-title">Usuarios</h1>
+          <Form>
+            <InputGroup className="my-3">
+              <Form.Control
+                className="search"
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Buscar"
+              />
+            </InputGroup>
+          </Form>
+        </div>
       <div>
-        <h1 className="table-title">Usuarios</h1>
         <div />
         <table className="styled-table">
           <thead>
@@ -116,7 +129,16 @@ function Home(props) {
           </thead>
 
           <tbody>
-            {data.map((item, index) => {
+          {data
+              .filter((item) => {
+                return search.toLowerCase() == ""
+                  ? item
+                  : item.USER_LAST_NAME.toLowerCase().includes(search) ||
+                      item.USER_LAST_NAME.includes(search) ||
+                      item.CURP.includes(search) ||
+                      item.RFC.includes(search);
+              })
+            .map((item, index) => {
               return (
                 <tr key={item.USER_ID}>
                   <th scope="row">{item.USER_ID}</th>

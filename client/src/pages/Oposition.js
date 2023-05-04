@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Oposition.css";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { openOposicionPopup } from "./Home";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Oposition(props) {
   const userId = props.userId;
@@ -33,6 +34,7 @@ export default function Oposition(props) {
   const handleRealizarOposicion = () => {
     props.onClose();
     handleSubmit();
+    toast.success("Se realizó la oposición con éxito");
   };
 
   return (

@@ -10,6 +10,14 @@
 	background-size: cover;
 }
 
+.search{
+	width: 30%;
+	height: 4vh;
+	transform: translateY(-7.9vh);
+	margin-left: 58vw;
+	border-radius: 6px;
+}
+
 .sidebar {
 	position: fixed;
 	left: 0;

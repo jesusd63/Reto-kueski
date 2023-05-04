@@ -59,7 +59,7 @@ function UserForm() {
       toast.success('Cambios guardados');
     } catch (error) {
       console.log(error);
-    }
+    }
   };
 
   useEffect(() => {
