@@ -74,6 +74,7 @@
   height: 272.8969px;
   background: transparent;
   border: 1px solid #000;
+  resize: none;
 }
 
 .head {
