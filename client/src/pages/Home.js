@@ -26,7 +26,7 @@ function Home(props) {
     USER_NAME: "",
     USER_LAST_NAME: "",
     USER_SEC_LAST_NAME: "",
-    USER_IS_CLIENT: false,
+    USER_IS_CLIENT: 0,
     OPEN: false,
   });
 
@@ -177,7 +177,7 @@ function Home(props) {
 
                         <button type="button" className="btn" onClick={() => openCancelPopup(item.USER_ID, item.USER_NAME, item.USER_LAST_NAME, item.USER_SEC_LAST_NAME, item.IS_CLIENT)}>Cancelación</button>
                         <Popup open={cancelOpen.OPEN} lockScroll={true} nested>
-                          <Cancel onClose={closeCancelPopup} userId={cancelOpen.USER_ID} userName={cancelOpen.USER_NAME} userLastName={cancelOpen.USER_LAST_NAME} userSecLastName={cancelOpen.USER_SEC_LAST_NAME}/>
+                          <Cancel onClose={closeCancelPopup} userId={cancelOpen.USER_ID} userName={cancelOpen.USER_NAME} userLastName={cancelOpen.USER_LAST_NAME} userSecLastName={cancelOpen.USER_SEC_LAST_NAME} user_is_client={cancelOpen.USER_IS_CLIENT}/>
                           <Backdrop onClose={closeCancelPopup}></Backdrop>
                         </Popup>
 
