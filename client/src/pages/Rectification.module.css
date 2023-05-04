@@ -72,7 +72,19 @@ input:focus{
 }
 
 .data_rect{
-    margin-left: 94vh;
+    margin-left: 50vh;
+    display: flex;
+}
+
+.data_rect_title{
+    margin-top: 4vh;
+    font-weight: 600;
+    font-size: 4vh;
+    text-decoration: underline .6vh #3600ea;
+}
+
+.data_rect_dir{
+    margin-left: 40vh;
 }
 
 .datapiece{
