@@ -62,6 +62,7 @@ function UserForm() {
         "ae":formData.ECONOMIC_ACTIVITY
     }
       const address_information = {
+        "user": Number(id),
         "ad_id": Number(formData.ADDRESS_ID),
         "pais": formData.COUNTRY,
         "est": formData.AD_STATE,

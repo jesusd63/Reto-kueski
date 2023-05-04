@@ -19,7 +19,7 @@ export default function Cancel(props) {
   const handleSubmit = () => {
     const url = `https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/cancel/${userId}/${comment}`;
     fetch(url, {
-      method: "POST"
+      method: "PATCH"
     })
       .then(response => response.json())
       .then(data => {
@@ -31,7 +31,7 @@ export default function Cancel(props) {
       });
   };
 
-  const handleRealizarOposicion = () => {
+  const handleRealizarCancelacion = () => {
     props.onClose();
     handleSubmit();
     toast.success("Se realizó la cancelación con éxito");
@@ -52,7 +52,7 @@ export default function Cancel(props) {
         <textarea className="Rectangle29" onChange={handleCommentChange} />
       </div>
       <div className="Cambios">
-        <button className="cancel-btn" onClick={handleRealizarOposicion}>
+        <button className="cancel-btn" onClick={handleRealizarCancelacion}>
           Realizar Cancelación
         </button>
       </div>
