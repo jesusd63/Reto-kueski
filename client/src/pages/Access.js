@@ -27,9 +27,11 @@ function Access() {
     }, );
 
 	function calc(GENDER){ 
+		// eslint-disable-next-line eqeqeq
 		if(GENDER == 0){
 			return "Masculino";
 		}
+		// eslint-disable-next-line eqeqeq
 		else if(GENDER == 1){
 			return "Femenino";
 		} else {

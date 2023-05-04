@@ -16,7 +16,6 @@ function UserForm() {
 
   const id = routeParams.id;
 
-  const [userData, setUserData] = useState({});
   const [formData, setFormData] = useState({
     USER_NAME: "",
     USER_LAST_NAME: "",
@@ -54,8 +53,7 @@ function UserForm() {
         "curp":formData.CURP,
         "ae":formData.ECONOMIC_ACTIVITY
     }
-      const response = await axios.patch(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect`, information);
-      setUserData(response.config.data);
+      await axios.patch(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/rect`, information);
       toast.success('Cambios guardados');
     } catch (error) {
       console.log(error);
@@ -66,8 +64,6 @@ function UserForm() {
     fetch(`https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/acceso/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        // Aquí establecemos los datos obtenidos en el estado userData
-        setUserData(data[0]);
         setFormData({
             USER_NAME: data[0].USER_NAME ,
             USER_LAST_NAME: data[0].USER_LAST_NAME,

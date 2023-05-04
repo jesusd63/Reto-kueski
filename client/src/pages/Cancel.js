@@ -1,13 +1,11 @@
 import "./Cancel.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Cancel(props) {
   const userId = props.userId;
-  const routeParams = useParams();
 
   const [comment, setComment] = useState("");
 
@@ -16,7 +14,6 @@ export default function Cancel(props) {
   };
 
   const handleSubmit = () => {
-    const user = routeParams.user;
     const url = `https://kueskiapi-jorgestebanmr-gmailcom-jorgestebanmr-gmailcom-s-team.vercel.app/action/cancel/${userId}/${comment}`;
     fetch(url, {
       method: "POST"
@@ -53,7 +50,7 @@ export default function Cancel(props) {
       </div>
       <div className="Cambios">
         <button className="cancel-btn" onClick={handleRealizarOposicion}>
-          Realizar Oposición
+          Realizar Cancelación
         </button>
       </div>
     </div>

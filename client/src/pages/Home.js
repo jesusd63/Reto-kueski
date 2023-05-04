@@ -28,7 +28,6 @@ function Home(props) {
       USER_ID: userId,
       OPEN: true,
     })
-    console.log(userId);
   };
 
   const openOposicionPopup = (userId) => {
@@ -131,6 +130,7 @@ function Home(props) {
           <tbody>
           {data
               .filter((item) => {
+                // eslint-disable-next-line eqeqeq
                 return search.toLowerCase() == ""
                   ? item
                   : item.USER_LAST_NAME.toLowerCase().includes(search) ||
