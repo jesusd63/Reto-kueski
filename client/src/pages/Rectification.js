@@ -223,6 +223,7 @@ function UserForm() {
           <button className={styles.btn_save} type="submit" onSubmit={handleSubmit}>Guardar cambios</button>
         </div>
       </form>
+      <div className={styles.end}></div>
     </div>
   );
 }

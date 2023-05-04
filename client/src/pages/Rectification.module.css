@@ -15,6 +15,10 @@ body{
     margin-top: 7.4vh;
 }
 
+.end{
+    height: 1vh;
+}
+
 .Name {
     margin-top: 6px;
     font-weight: 600;
@@ -54,10 +58,11 @@ label{
 }
 
 input{
-    border: 1px solid black;
+    border: 1px solid rgb(83, 83, 83);
     border-radius: 6px;
     font-family: inherit;
-    height: 3vh;
+    padding-left: 2vh;
+    height: 5vh;
     outline: none;
     width: 30vh;
 }
@@ -73,6 +78,7 @@ input:focus{
 .datapiece{
     margin-top: 2%;
     width: 28vh;
+    text-align: left;
 }
 .btn_save{
     background-color: #3600ea;
@@ -85,12 +91,12 @@ input:focus{
     margin-top: 5%;
     margin-left: 10vh;
     border: none;
-    width: 150px;
+    width: 70vh;
     height: 52.8302px;
 }
 
 .btn_save_div{
-    margin-left: 42.5%;
+    margin-left: 30%;
     margin-bottom: 10vh;
 }
 
